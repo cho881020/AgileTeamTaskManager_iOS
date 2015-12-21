@@ -14,6 +14,7 @@
 		2B786A9D1C28431D00759334 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B786A9B1C28431D00759334 /* LaunchScreen.storyboard */; };
 		2B786AA81C28431D00759334 /* AgileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AA71C28431D00759334 /* AgileTests.swift */; };
 		2B786AB31C28431D00759334 /* AgileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AB21C28431D00759334 /* AgileUITests.swift */; };
+		2B786AC11C284A7D00759334 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2B786AAE1C28431D00759334 /* AgileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B786AB21C28431D00759334 /* AgileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgileUITests.swift; sourceTree = "<group>"; };
 		2B786AB41C28431D00759334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				2B786A921C28431D00759334 /* AppDelegate.swift */,
 				2B786A941C28431D00759334 /* ViewController.swift */,
+				2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */,
 				2B786A961C28431D00759334 /* Main.storyboard */,
 				2B786A991C28431D00759334 /* Assets.xcassets */,
 				2B786A9B1C28431D00759334 /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B786AC11C284A7D00759334 /* ToDoTableViewCell.swift in Sources */,
 				2B786A951C28431D00759334 /* ViewController.swift in Sources */,
 				2B786A931C28431D00759334 /* AppDelegate.swift in Sources */,
 			);
@@ -398,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Agile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.KJStudio.Agile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Agile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.KJStudio.Agile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
