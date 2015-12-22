@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoTableViewCell: UITableViewCell {
+class ToDoTableViewCell: UITableViewCell, UIScrollViewDelegate {
 
     @IBOutlet weak var toDoScrollView: UIScrollView!
     @IBOutlet weak var toDoContentView: UIView!
@@ -16,13 +16,22 @@ class ToDoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        toDoScrollView.delegate = self
+        toDoScrollView.contentSize = CGSizeMake(toDoContentView.frame.size.width, 1)
+        toDoScrollView.alwaysBounceVertical=false
+        toDoScrollView.alwaysBounceHorizontal=false
+        var tempFrame:CGRect = toDoScrollView.frame
+        tempFrame.origin.x = toDoScrollView.frame.size.width
+        toDoScrollView.scrollRectToVisible(tempFrame, animated: false)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        NSLog("??")
+        
     }
 
 }

@@ -26,34 +26,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        if scrollView.superview?.isEqual(self.view) == true {
-            NSLog("scrollViewDidScroll")
-            var page:CGFloat!
-            page = scrollView.contentOffset.x / scrollView.frame.size.width
-            
-            //setBarButtons(page)
-        }
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = toDoTableView.dequeueReusableCellWithIdentifier("ToDoCell") as! ToDoTableViewCell
-        
-        let contentView = cell.toDoContentView as UIView
-        let scrollView = cell.toDoScrollView as UIScrollView
-        scrollView.delegate = self
-        scrollView.contentSize = CGSizeMake(contentView.frame.size.width, 1)
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.showsHorizontalScrollIndicator=false
-        scrollView.alwaysBounceVertical=false
-        scrollView.alwaysBounceHorizontal=false
+        let cell = toDoTableView.dequeueReusableCellWithIdentifier("ToDoCell") as! ToDoTableViewCell!
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        NSLog("row = %d", indexPath.row)
     }
 
 
