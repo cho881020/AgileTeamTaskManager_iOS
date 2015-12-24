@@ -30,7 +30,6 @@ class ToDoTableViewCell: UITableViewCell, UIScrollViewDelegate {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        NSLog("??")
         
     }
 

@@ -15,6 +15,8 @@
 		2B786AA81C28431D00759334 /* AgileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AA71C28431D00759334 /* AgileTests.swift */; };
 		2B786AB31C28431D00759334 /* AgileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AB21C28431D00759334 /* AgileUITests.swift */; };
 		2B786AC11C284A7D00759334 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */; };
+		DFF4232C1C2C16CB0013AC29 /* DoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */; };
+		DFF4232E1C2C16D90013AC29 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		2B786AB21C28431D00759334 /* AgileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgileUITests.swift; sourceTree = "<group>"; };
 		2B786AB41C28431D00759334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoingTableViewCell.swift; sourceTree = "<group>"; };
+		DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,9 @@
 		2B786A911C28431D00759334 /* Agile */ = {
 			isa = PBXGroup;
 			children = (
+				DFF4232A1C2C16990013AC29 /* TableViewCells */,
+				DFF423291C2C168F0013AC29 /* ViewControllers */,
 				2B786A921C28431D00759334 /* AppDelegate.swift */,
-				2B786A941C28431D00759334 /* ViewController.swift */,
-				2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */,
 				2B786A961C28431D00759334 /* Main.storyboard */,
 				2B786A991C28431D00759334 /* Assets.xcassets */,
 				2B786A9B1C28431D00759334 /* LaunchScreen.storyboard */,
@@ -126,6 +130,24 @@
 				2B786AB41C28431D00759334 /* Info.plist */,
 			);
 			path = AgileUITests;
+			sourceTree = "<group>";
+		};
+		DFF423291C2C168F0013AC29 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B786A941C28431D00759334 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DFF4232A1C2C16990013AC29 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */,
+				DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */,
+				DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */,
+			);
+			name = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +284,8 @@
 				2B786AC11C284A7D00759334 /* ToDoTableViewCell.swift in Sources */,
 				2B786A951C28431D00759334 /* ViewController.swift in Sources */,
 				2B786A931C28431D00759334 /* AppDelegate.swift in Sources */,
+				DFF4232E1C2C16D90013AC29 /* DoneTableViewCell.swift in Sources */,
+				DFF4232C1C2C16CB0013AC29 /* DoingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +512,7 @@
 				2B786AB91C28431D00759334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B786ABA1C28431D00759334 /* Build configuration list for PBXNativeTarget "AgileTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +521,7 @@
 				2B786ABC1C28431D00759334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B786ABD1C28431D00759334 /* Build configuration list for PBXNativeTarget "AgileUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +530,7 @@
 				2B786ABF1C28431D00759334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
