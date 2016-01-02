@@ -15,6 +15,38 @@
 		2B786AA81C28431D00759334 /* AgileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AA71C28431D00759334 /* AgileTests.swift */; };
 		2B786AB31C28431D00759334 /* AgileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AB21C28431D00759334 /* AgileUITests.swift */; };
 		2B786AC11C284A7D00759334 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */; };
+		DF084A131C3810FC003F479B /* TeamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF084A121C3810FC003F479B /* TeamSearchViewController.swift */; };
+		DF0B026F1C2FD5E200D61FAB /* GeneralUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B026C1C2FD5E200D61FAB /* GeneralUtil.swift */; };
+		DF0B02701C2FD5E200D61FAB /* ServerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B026E1C2FD5E200D61FAB /* ServerUtil.m */; };
+		DF0B02761C2FD84D00D61FAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02751C2FD84D00D61FAB /* LoginViewController.swift */; };
+		DF0B02A21C2FDDBD00D61FAB /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B028A1C2FDDBD00D61FAB /* NSObject+SBJson.m */; };
+		DF0B02A31C2FDDBD00D61FAB /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B028D1C2FDDBD00D61FAB /* SBJsonParser.m */; };
+		DF0B02A41C2FDDBD00D61FAB /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B028F1C2FDDBD00D61FAB /* SBJsonStreamParser.m */; };
+		DF0B02A51C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02911C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.m */; };
+		DF0B02A61C2FDDBD00D61FAB /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02931C2FDDBD00D61FAB /* SBJsonStreamParserAdapter.m */; };
+		DF0B02A71C2FDDBD00D61FAB /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02951C2FDDBD00D61FAB /* SBJsonStreamParserState.m */; };
+		DF0B02A81C2FDDBD00D61FAB /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02971C2FDDBD00D61FAB /* SBJsonStreamWriter.m */; };
+		DF0B02A91C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02991C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.m */; };
+		DF0B02AA1C2FDDBD00D61FAB /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B029B1C2FDDBD00D61FAB /* SBJsonStreamWriterState.m */; };
+		DF0B02AB1C2FDDBD00D61FAB /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B029D1C2FDDBD00D61FAB /* SBJsonTokeniser.m */; };
+		DF0B02AC1C2FDDBD00D61FAB /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B029F1C2FDDBD00D61FAB /* SBJsonUTF8Stream.m */; };
+		DF0B02AD1C2FDDBD00D61FAB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02A11C2FDDBD00D61FAB /* SBJsonWriter.m */; };
+		DF0B02C11C2FDDD900D61FAB /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02AF1C2FDDD900D61FAB /* AFHTTPClient.m */; };
+		DF0B02C21C2FDDD900D61FAB /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02B11C2FDDD900D61FAB /* AFHTTPRequestOperation.m */; };
+		DF0B02C31C2FDDD900D61FAB /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02B31C2FDDD900D61FAB /* AFImageRequestOperation.m */; };
+		DF0B02C41C2FDDD900D61FAB /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02B51C2FDDD900D61FAB /* AFJSONRequestOperation.m */; };
+		DF0B02C51C2FDDD900D61FAB /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02B71C2FDDD900D61FAB /* AFNetworkActivityIndicatorManager.m */; };
+		DF0B02C61C2FDDD900D61FAB /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02BA1C2FDDD900D61FAB /* AFPropertyListRequestOperation.m */; };
+		DF0B02C71C2FDDD900D61FAB /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02BC1C2FDDD900D61FAB /* AFURLConnectionOperation.m */; };
+		DF0B02C81C2FDDD900D61FAB /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02BE1C2FDDD900D61FAB /* AFXMLRequestOperation.m */; };
+		DF0B02C91C2FDDD900D61FAB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02C01C2FDDD900D61FAB /* UIImageView+AFNetworking.m */; };
+		DF0B02CC1C2FDEFF00D61FAB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0B02CA1C2FDEFF00D61FAB /* FBSDKCoreKit.framework */; };
+		DF0B02CD1C2FDEFF00D61FAB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0B02CB1C2FDEFF00D61FAB /* FBSDKLoginKit.framework */; };
+		DF0B02CF1C303B5500D61FAB /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0B02CE1C303B5500D61FAB /* FBSDKShareKit.framework */; };
+		DF0B02D11C3051E900D61FAB /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */; };
+		DF0B02D41C305A3400D61FAB /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D31C305A3400D61FAB /* TeamData.swift */; };
+		DF0B02D61C305F3C00D61FAB /* facebook_login_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DF0B02D51C305F3C00D61FAB /* facebook_login_image.png */; };
+		DF0B02D81C30600900D61FAB /* ContentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D71C30600900D61FAB /* ContentsData.swift */; };
 		DFF4232C1C2C16CB0013AC29 /* DoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */; };
 		DFF4232E1C2C16D90013AC29 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +83,63 @@
 		2B786AB21C28431D00759334 /* AgileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgileUITests.swift; sourceTree = "<group>"; };
 		2B786AB41C28431D00759334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		DF084A121C3810FC003F479B /* TeamSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSearchViewController.swift; sourceTree = "<group>"; };
+		DF0B026B1C2FD5E200D61FAB /* Agile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Agile-Bridging-Header.h"; sourceTree = "<group>"; };
+		DF0B026C1C2FD5E200D61FAB /* GeneralUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralUtil.swift; path = ../../../Desktop/GongBack/GongBack/GeneralUtil.swift; sourceTree = "<group>"; };
+		DF0B026D1C2FD5E200D61FAB /* ServerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerUtil.h; path = ../../../Desktop/GongBack/GongBack/ServerUtil.h; sourceTree = "<group>"; };
+		DF0B026E1C2FD5E200D61FAB /* ServerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerUtil.m; path = ../../../Desktop/GongBack/GongBack/ServerUtil.m; sourceTree = "<group>"; };
+		DF0B02751C2FD84D00D61FAB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DF0B02891C2FDDBD00D61FAB /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "SBJson/NSObject+SBJson.h"; sourceTree = "<group>"; };
+		DF0B028A1C2FDDBD00D61FAB /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "SBJson/NSObject+SBJson.m"; sourceTree = "<group>"; };
+		DF0B028B1C2FDDBD00D61FAB /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = SBJson/SBJson.h; sourceTree = "<group>"; };
+		DF0B028C1C2FDDBD00D61FAB /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = SBJson/SBJsonParser.h; sourceTree = "<group>"; };
+		DF0B028D1C2FDDBD00D61FAB /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = SBJson/SBJsonParser.m; sourceTree = "<group>"; };
+		DF0B028E1C2FDDBD00D61FAB /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParser.h; path = SBJson/SBJsonStreamParser.h; sourceTree = "<group>"; };
+		DF0B028F1C2FDDBD00D61FAB /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParser.m; path = SBJson/SBJsonStreamParser.m; sourceTree = "<group>"; };
+		DF0B02901C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAccumulator.h; path = SBJson/SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		DF0B02911C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAccumulator.m; path = SBJson/SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		DF0B02921C2FDDBD00D61FAB /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAdapter.h; path = SBJson/SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		DF0B02931C2FDDBD00D61FAB /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAdapter.m; path = SBJson/SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		DF0B02941C2FDDBD00D61FAB /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserState.h; path = SBJson/SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		DF0B02951C2FDDBD00D61FAB /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserState.m; path = SBJson/SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		DF0B02961C2FDDBD00D61FAB /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriter.h; path = SBJson/SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		DF0B02971C2FDDBD00D61FAB /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriter.m; path = SBJson/SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		DF0B02981C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterAccumulator.h; path = SBJson/SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		DF0B02991C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterAccumulator.m; path = SBJson/SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		DF0B029A1C2FDDBD00D61FAB /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterState.h; path = SBJson/SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		DF0B029B1C2FDDBD00D61FAB /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterState.m; path = SBJson/SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		DF0B029C1C2FDDBD00D61FAB /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonTokeniser.h; path = SBJson/SBJsonTokeniser.h; sourceTree = "<group>"; };
+		DF0B029D1C2FDDBD00D61FAB /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonTokeniser.m; path = SBJson/SBJsonTokeniser.m; sourceTree = "<group>"; };
+		DF0B029E1C2FDDBD00D61FAB /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonUTF8Stream.h; path = SBJson/SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		DF0B029F1C2FDDBD00D61FAB /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = SBJson/SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		DF0B02A01C2FDDBD00D61FAB /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = SBJson/SBJsonWriter.h; sourceTree = "<group>"; };
+		DF0B02A11C2FDDBD00D61FAB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = SBJson/SBJsonWriter.m; sourceTree = "<group>"; };
+		DF0B02AE1C2FDDD900D61FAB /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
+		DF0B02AF1C2FDDD900D61FAB /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
+		DF0B02B01C2FDDD900D61FAB /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		DF0B02B11C2FDDD900D61FAB /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		DF0B02B21C2FDDD900D61FAB /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFImageRequestOperation.h; path = AFNetworking/AFImageRequestOperation.h; sourceTree = "<group>"; };
+		DF0B02B31C2FDDD900D61FAB /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFImageRequestOperation.m; path = AFNetworking/AFImageRequestOperation.m; sourceTree = "<group>"; };
+		DF0B02B41C2FDDD900D61FAB /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFJSONRequestOperation.h; path = AFNetworking/AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		DF0B02B51C2FDDD900D61FAB /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFJSONRequestOperation.m; path = AFNetworking/AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		DF0B02B61C2FDDD900D61FAB /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		DF0B02B71C2FDDD900D61FAB /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = AFNetworking/AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		DF0B02B81C2FDDD900D61FAB /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		DF0B02B91C2FDDD900D61FAB /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFPropertyListRequestOperation.h; path = AFNetworking/AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		DF0B02BA1C2FDDD900D61FAB /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFPropertyListRequestOperation.m; path = AFNetworking/AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		DF0B02BB1C2FDDD900D61FAB /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		DF0B02BC1C2FDDD900D61FAB /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		DF0B02BD1C2FDDD900D61FAB /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFXMLRequestOperation.h; path = AFNetworking/AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		DF0B02BE1C2FDDD900D61FAB /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		DF0B02BF1C2FDDD900D61FAB /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		DF0B02C01C2FDDD900D61FAB /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		DF0B02CA1C2FDEFF00D61FAB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		DF0B02CB1C2FDEFF00D61FAB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		DF0B02CE1C303B5500D61FAB /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
+		DF0B02D31C305A3400D61FAB /* TeamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
+		DF0B02D51C305F3C00D61FAB /* facebook_login_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook_login_image.png; path = ../../../Desktop/GongBack/GongBack/facebook_login_image.png; sourceTree = "<group>"; };
+		DF0B02D71C30600900D61FAB /* ContentsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsData.swift; sourceTree = "<group>"; };
 		DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoingTableViewCell.swift; sourceTree = "<group>"; };
 		DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +149,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0B02CF1C303B5500D61FAB /* FBSDKShareKit.framework in Frameworks */,
+				DF0B02CC1C2FDEFF00D61FAB /* FBSDKCoreKit.framework in Frameworks */,
+				DF0B02CD1C2FDEFF00D61FAB /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +195,13 @@
 		2B786A911C28431D00759334 /* Agile */ = {
 			isa = PBXGroup;
 			children = (
+				DF0B02D51C305F3C00D61FAB /* facebook_login_image.png */,
+				DF0B02D21C305A1400D61FAB /* DataClass */,
+				DF0B02811C2FDC0900D61FAB /* Frameworks */,
+				DF0B027F1C2FDBEF00D61FAB /* Libraries */,
+				DF0B026C1C2FD5E200D61FAB /* GeneralUtil.swift */,
+				DF0B026D1C2FD5E200D61FAB /* ServerUtil.h */,
+				DF0B026E1C2FD5E200D61FAB /* ServerUtil.m */,
 				DFF4232A1C2C16990013AC29 /* TableViewCells */,
 				DFF423291C2C168F0013AC29 /* ViewControllers */,
 				2B786A921C28431D00759334 /* AppDelegate.swift */,
@@ -110,6 +209,7 @@
 				2B786A991C28431D00759334 /* Assets.xcassets */,
 				2B786A9B1C28431D00759334 /* LaunchScreen.storyboard */,
 				2B786A9E1C28431D00759334 /* Info.plist */,
+				DF0B026B1C2FD5E200D61FAB /* Agile-Bridging-Header.h */,
 			);
 			path = Agile;
 			sourceTree = "<group>";
@@ -132,10 +232,99 @@
 			path = AgileUITests;
 			sourceTree = "<group>";
 		};
+		DF0B027F1C2FDBEF00D61FAB /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				DF0B02881C2FDD5300D61FAB /* SBJson */,
+				DF0B02861C2FDD2A00D61FAB /* AFNetworking */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		DF0B02811C2FDC0900D61FAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF0B02CE1C303B5500D61FAB /* FBSDKShareKit.framework */,
+				DF0B02CA1C2FDEFF00D61FAB /* FBSDKCoreKit.framework */,
+				DF0B02CB1C2FDEFF00D61FAB /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF0B02861C2FDD2A00D61FAB /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				DF0B02AE1C2FDDD900D61FAB /* AFHTTPClient.h */,
+				DF0B02AF1C2FDDD900D61FAB /* AFHTTPClient.m */,
+				DF0B02B01C2FDDD900D61FAB /* AFHTTPRequestOperation.h */,
+				DF0B02B11C2FDDD900D61FAB /* AFHTTPRequestOperation.m */,
+				DF0B02B21C2FDDD900D61FAB /* AFImageRequestOperation.h */,
+				DF0B02B31C2FDDD900D61FAB /* AFImageRequestOperation.m */,
+				DF0B02B41C2FDDD900D61FAB /* AFJSONRequestOperation.h */,
+				DF0B02B51C2FDDD900D61FAB /* AFJSONRequestOperation.m */,
+				DF0B02B61C2FDDD900D61FAB /* AFNetworkActivityIndicatorManager.h */,
+				DF0B02B71C2FDDD900D61FAB /* AFNetworkActivityIndicatorManager.m */,
+				DF0B02B81C2FDDD900D61FAB /* AFNetworking.h */,
+				DF0B02B91C2FDDD900D61FAB /* AFPropertyListRequestOperation.h */,
+				DF0B02BA1C2FDDD900D61FAB /* AFPropertyListRequestOperation.m */,
+				DF0B02BB1C2FDDD900D61FAB /* AFURLConnectionOperation.h */,
+				DF0B02BC1C2FDDD900D61FAB /* AFURLConnectionOperation.m */,
+				DF0B02BD1C2FDDD900D61FAB /* AFXMLRequestOperation.h */,
+				DF0B02BE1C2FDDD900D61FAB /* AFXMLRequestOperation.m */,
+				DF0B02BF1C2FDDD900D61FAB /* UIImageView+AFNetworking.h */,
+				DF0B02C01C2FDDD900D61FAB /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			sourceTree = "<group>";
+		};
+		DF0B02881C2FDD5300D61FAB /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				DF0B02891C2FDDBD00D61FAB /* NSObject+SBJson.h */,
+				DF0B028A1C2FDDBD00D61FAB /* NSObject+SBJson.m */,
+				DF0B028B1C2FDDBD00D61FAB /* SBJson.h */,
+				DF0B028C1C2FDDBD00D61FAB /* SBJsonParser.h */,
+				DF0B028D1C2FDDBD00D61FAB /* SBJsonParser.m */,
+				DF0B028E1C2FDDBD00D61FAB /* SBJsonStreamParser.h */,
+				DF0B028F1C2FDDBD00D61FAB /* SBJsonStreamParser.m */,
+				DF0B02901C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.h */,
+				DF0B02911C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.m */,
+				DF0B02921C2FDDBD00D61FAB /* SBJsonStreamParserAdapter.h */,
+				DF0B02931C2FDDBD00D61FAB /* SBJsonStreamParserAdapter.m */,
+				DF0B02941C2FDDBD00D61FAB /* SBJsonStreamParserState.h */,
+				DF0B02951C2FDDBD00D61FAB /* SBJsonStreamParserState.m */,
+				DF0B02961C2FDDBD00D61FAB /* SBJsonStreamWriter.h */,
+				DF0B02971C2FDDBD00D61FAB /* SBJsonStreamWriter.m */,
+				DF0B02981C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.h */,
+				DF0B02991C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.m */,
+				DF0B029A1C2FDDBD00D61FAB /* SBJsonStreamWriterState.h */,
+				DF0B029B1C2FDDBD00D61FAB /* SBJsonStreamWriterState.m */,
+				DF0B029C1C2FDDBD00D61FAB /* SBJsonTokeniser.h */,
+				DF0B029D1C2FDDBD00D61FAB /* SBJsonTokeniser.m */,
+				DF0B029E1C2FDDBD00D61FAB /* SBJsonUTF8Stream.h */,
+				DF0B029F1C2FDDBD00D61FAB /* SBJsonUTF8Stream.m */,
+				DF0B02A01C2FDDBD00D61FAB /* SBJsonWriter.h */,
+				DF0B02A11C2FDDBD00D61FAB /* SBJsonWriter.m */,
+			);
+			name = SBJson;
+			sourceTree = "<group>";
+		};
+		DF0B02D21C305A1400D61FAB /* DataClass */ = {
+			isa = PBXGroup;
+			children = (
+				DF0B02D31C305A3400D61FAB /* TeamData.swift */,
+				DF0B02D71C30600900D61FAB /* ContentsData.swift */,
+			);
+			name = DataClass;
+			sourceTree = "<group>";
+		};
 		DFF423291C2C168F0013AC29 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				2B786A941C28431D00759334 /* ViewController.swift */,
+				DF0B02751C2FD84D00D61FAB /* LoginViewController.swift */,
+				DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */,
+				DF084A121C3810FC003F479B /* TeamSearchViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -212,7 +401,7 @@
 		2B786A871C28431C00759334 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = KJStudio;
 				TargetAttributes = {
@@ -257,6 +446,7 @@
 				2B786A9D1C28431D00759334 /* LaunchScreen.storyboard in Resources */,
 				2B786A9A1C28431D00759334 /* Assets.xcassets in Resources */,
 				2B786A981C28431D00759334 /* Main.storyboard in Resources */,
+				DF0B02D61C305F3C00D61FAB /* facebook_login_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +471,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0B02AA1C2FDDBD00D61FAB /* SBJsonStreamWriterState.m in Sources */,
+				DF0B02AD1C2FDDBD00D61FAB /* SBJsonWriter.m in Sources */,
 				2B786AC11C284A7D00759334 /* ToDoTableViewCell.swift in Sources */,
 				2B786A951C28431D00759334 /* ViewController.swift in Sources */,
+				DF0B02C71C2FDDD900D61FAB /* AFURLConnectionOperation.m in Sources */,
+				DF0B02A91C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.m in Sources */,
+				DF0B02C91C2FDDD900D61FAB /* UIImageView+AFNetworking.m in Sources */,
+				DF0B02C11C2FDDD900D61FAB /* AFHTTPClient.m in Sources */,
+				DF0B02A51C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.m in Sources */,
+				DF0B026F1C2FD5E200D61FAB /* GeneralUtil.swift in Sources */,
+				DF0B02A31C2FDDBD00D61FAB /* SBJsonParser.m in Sources */,
+				DF0B02701C2FD5E200D61FAB /* ServerUtil.m in Sources */,
+				DF0B02C21C2FDDD900D61FAB /* AFHTTPRequestOperation.m in Sources */,
+				DF0B02761C2FD84D00D61FAB /* LoginViewController.swift in Sources */,
+				DF0B02C61C2FDDD900D61FAB /* AFPropertyListRequestOperation.m in Sources */,
+				DF0B02C31C2FDDD900D61FAB /* AFImageRequestOperation.m in Sources */,
 				2B786A931C28431D00759334 /* AppDelegate.swift in Sources */,
+				DF0B02C41C2FDDD900D61FAB /* AFJSONRequestOperation.m in Sources */,
 				DFF4232E1C2C16D90013AC29 /* DoneTableViewCell.swift in Sources */,
+				DF0B02AC1C2FDDBD00D61FAB /* SBJsonUTF8Stream.m in Sources */,
+				DF0B02AB1C2FDDBD00D61FAB /* SBJsonTokeniser.m in Sources */,
+				DF084A131C3810FC003F479B /* TeamSearchViewController.swift in Sources */,
+				DF0B02D81C30600900D61FAB /* ContentsData.swift in Sources */,
+				DF0B02C81C2FDDD900D61FAB /* AFXMLRequestOperation.m in Sources */,
+				DF0B02A71C2FDDBD00D61FAB /* SBJsonStreamParserState.m in Sources */,
+				DF0B02D11C3051E900D61FAB /* TeamListViewController.swift in Sources */,
+				DF0B02A61C2FDDBD00D61FAB /* SBJsonStreamParserAdapter.m in Sources */,
+				DF0B02A21C2FDDBD00D61FAB /* NSObject+SBJson.m in Sources */,
 				DFF4232C1C2C16CB0013AC29 /* DoingTableViewCell.swift in Sources */,
+				DF0B02A81C2FDDBD00D61FAB /* SBJsonStreamWriter.m in Sources */,
+				DF0B02D41C305A3400D61FAB /* TeamData.swift in Sources */,
+				DF0B02A41C2FDDBD00D61FAB /* SBJsonStreamParser.m in Sources */,
+				DF0B02C51C2FDDD900D61FAB /* AFNetworkActivityIndicatorManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,11 +643,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Agile",
+				);
 				INFOPLIST_FILE = Agile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.KJStudio.Agile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Agile/Agile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -437,11 +662,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Agile",
+				);
 				INFOPLIST_FILE = Agile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.KJStudio.Agile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Agile/Agile-Bridging-Header.h";
 			};
 			name = Release;
 		};
