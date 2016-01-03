@@ -13,7 +13,7 @@ class TeamSearchViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
     
-    @IBAction func searchTeam(sender: UIButton) {
+    @IBAction func searchTeam(sender: UIButton) { //팀 검색
         NSLog("teamName = %@", searchTextField.text!)
         ServerUtil.searchTeam(searchTextField.text!) { (handler) -> Void in
             NSLog("handler = %@", handler)
