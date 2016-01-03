@@ -56,20 +56,19 @@ class LoginViewController: UIViewController {
                 self.userName = resultDic!["name"] as! String
                 
                 GeneralUtil.setUserId(self.userId)
-                GeneralUtil.setUserName(self.userName)
+//                GeneralUtil.setUserName(self.userName)
                 NSLog("userId = %@", GeneralUtil.getUserId())
-                NSLog("userName = %@", GeneralUtil.getUserName())
+//                NSLog("userName = %@", GeneralUtil.getUserName())
                 
-                GeneralUtil.setUserLogedIn(true)
-                GeneralUtil.setFacebookLogedIn(true)
-                GeneralUtil.setLoginType("facebook")
+//                GeneralUtil.setUserLogedIn(true)
+//                GeneralUtil.setFacebookLogedIn(true)
+//                GeneralUtil.setLoginType("facebook")
                 
-                let facebookProfileURL = "http://graph.facebook.com/\(GeneralUtil.getUserId() as String)/picture?type=large"
-                NSLog("facebookProfileURL = %@", facebookProfileURL)
-                GeneralUtil.setFacebookProfileImageURL(facebookProfileURL)
-                NSLog("페이스북 프로필 URL 확인 = %@", GeneralUtil.getFacebookProfileImageURL())
-                NSLog("fetched user: \(result)")
-                
+//                let facebookProfileURL = "http://graph.facebook.com/\(GeneralUtil.getUserId() as String)/picture?type=large"
+//                NSLog("facebookProfileURL = %@", facebookProfileURL)
+//                GeneralUtil.setFacebookProfileImageURL(facebookProfileURL)
+//                NSLog("페이스북 프로필 URL 확인 = %@", GeneralUtil.getFacebookProfileImageURL())
+//                NSLog("fetched user: \(result)")
                 
                 let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
                 
@@ -106,47 +105,6 @@ class LoginViewController: UIViewController {
                     
                     self.performSegueWithIdentifier("loginSegue", sender: UIButton())
                 })
-                
-//                ServerUtil.registerUserInfo(GeneralUtil.getUserId() as String, userName: GeneralUtil.getUserName() as String, loginType: GeneralUtil.getLoginType() as String, userType: "performer", os: "iOS", deviceToken: "", phoneNum: "", description: GeneralUtil.getUserDesc() as String, imageURL: GeneralUtil.getFacebookProfileImageURL() as String, reponseHandler: { handler -> Void in
-//                    NSLog("서버로 넘어갔당!!face = %@", handler)
-//                    let belongId:String = handler["belongId"] as! String
-//                    let hallId:String = handler["hallId"] as! String
-//                    NSLog("belongId = %@", belongId)
-//                    GeneralUtil.setBelongId(belongId)
-//                    NSLog("general belongId = %@",GeneralUtil.getBelongId())
-//                    NSLog("hallId = %@", hallId)
-//                    GeneralUtil.setHallId(hallId)
-//                    NSLog("general belongId = %@",GeneralUtil.getHallId())
-//                    
-//                    let userProfile:NSDictionary = handler["userProfile"] as! NSDictionary
-//                    let phoneNum:String = userProfile["phoneNum"] as! String
-//                    let userServerName:String = userProfile["userName"] as! String
-//                    let regId:String = userProfile["id"] as! String
-//                    let desc:String = userProfile["description"] as! String
-//                    
-//                    GeneralUtil.setRegId(regId)
-//                    GeneralUtil.setUserPhoneNum(phoneNum)
-//                    GeneralUtil.setUserDesc(desc)
-//                    GeneralUtil.setUserName(userServerName)
-//                    
-//                    NSLog("유저 이름 = %@", GeneralUtil.getUserName() as String)
-//                    NSLog("유저 폰 넘버 = %@", GeneralUtil.getUserPhoneNum() as String)
-//                    NSLog("유저 소개글 = %@", GeneralUtil.getUserDesc() as String)
-//                    
-//                    NSLog("segue 실행")
-//                    
-//                    activeIndicator.stopAnimating()
-//                    blurView.removeFromSuperview()
-//                    
-//                    NSLog("isProfile = %@", self.isProfile)
-//                    NSLog("@@@@@@ = %d", (!GeneralUtil.getUserPhoneNum().isEqualToString("")))
-//                    if self.isProfile && !GeneralUtil.getUserPhoneNum().isEqualToString("") {
-//                        self.performSegueWithIdentifier("loginSegue", sender: UIButton())
-//                    }
-//                    else {
-//                        self.performSegueWithIdentifier("profileSegue", sender: UIButton())
-//                    }
-//                })
                 
             }
         })

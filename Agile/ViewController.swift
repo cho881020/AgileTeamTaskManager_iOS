@@ -18,6 +18,8 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
     var toDoList:NSMutableArray = NSMutableArray()
     var doingList:NSMutableArray = NSMutableArray()
     var doneList:NSMutableArray = NSMutableArray()
+    var widthRate:CGFloat!
+    var heightRate:CGFloat!
     
     @IBAction func toDoView(sender: UIButton) {
         toDoTableView.hidden = false
@@ -61,31 +63,31 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 0 {
-            let content:String = (alertView.textFieldAtIndex(0)?.text)!
+            let task:String = (alertView.textFieldAtIndex(0)?.text)!
 
-            ServerUtil.newContent(GeneralUtil.getUserId() as String, content: content, teamId: GeneralUtil.getTeamId() as String) { (handler) -> Void in
+            ServerUtil.newTask(GeneralUtil.getUserId() as String, userTask: task, projectId: GeneralUtil.getTeamId() as String) { (handler) -> Void in
                 NSLog("handler = %@", handler)
                 
                 self.toDoList.removeAllObjects()
                 self.doingList.removeAllObjects()
                 self.doneList.removeAllObjects()
                 
-                let contents:NSArray = handler["content"] as! NSArray
+                let tasks:NSArray = handler["content"] as! NSArray
                 
-                for var i = 0; i < contents.count; i++ {
-                    let content:NSDictionary = contents[i] as! NSDictionary
+                for var i = 0; i < tasks.count; i++ {
+                    let task:NSDictionary = tasks[i] as! NSDictionary
                     
-                    let contentData:ContentsData = ContentsData(ContentsData: content)
-                    let status:NSString = contentData.status
+                    let taskData:TaskData = TaskData(TaskData: task)
+                    let status:NSString = taskData.status
                     
                     if status.isEqualToString("to_do") {
-                        self.toDoList.addObject(contentData)
+                        self.toDoList.addObject(taskData)
                     }
                     else if status.isEqualToString("doing") {
-                        self.doingList.addObject(contentData)
+                        self.doingList.addObject(taskData)
                     }
                     else if status.isEqualToString("done") {
-                        self.doneList.addObject(contentData)
+                        self.doneList.addObject(taskData)
                     }
                 }
                 
@@ -98,6 +100,9 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        widthRate = UIScreen.mainScreen().bounds.width / 375
+        heightRate = UIScreen.mainScreen().bounds.height / 667
         
         self.navigationItem.title = "To Do"
         
@@ -139,9 +144,9 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
         
         if toDoTableView.hidden == false {
             if (scrollView.contentOffset.x == 0) && (scrollView.contentOffset.y == 0) {
-                let content:ContentsData = toDoList.objectAtIndex(scrollView.tag) as! ContentsData
+                let task:TaskData = toDoList.objectAtIndex(scrollView.tag) as! TaskData
                 
-                ServerUtil.contentToLeft(String(content.id), teamId: GeneralUtil.getTeamId() as String, userContent: content.userContent, reponseHandler: { (handler) -> Void in
+                ServerUtil.taskToLeft(String(task.id), projectId: GeneralUtil.getTeamId() as String, userTask: task.userTask, reponseHandler: { (handler) -> Void in
                     NSLog("go to doing")
                     NSLog("handler = %@", handler)
                     
@@ -153,22 +158,22 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
                     self.doingList.removeAllObjects()
                     self.doneList.removeAllObjects()
                     
-                    let contents:NSArray = handler["content"] as! NSArray
+                    let tasks:NSArray = handler["content"] as! NSArray
                     
-                    for var i = 0; i < contents.count; i++ {
-                        let content:NSDictionary = contents[i] as! NSDictionary
+                    for var i = 0; i < tasks.count; i++ {
+                        let task:NSDictionary = tasks[i] as! NSDictionary
                         
-                        let contentData:ContentsData = ContentsData(ContentsData: content)
-                        let status:NSString = contentData.status
+                        let taskData:TaskData = TaskData(TaskData: task)
+                        let status:NSString = taskData.status
                         
                         if status.isEqualToString("to_do") {
-                            self.toDoList.addObject(contentData)
+                            self.toDoList.addObject(taskData)
                         }
                         else if status.isEqualToString("doing") {
-                            self.doingList.addObject(contentData)
+                            self.doingList.addObject(taskData)
                         }
                         else if status.isEqualToString("done") {
-                            self.doneList.addObject(contentData)
+                            self.doneList.addObject(taskData)
                         }
                     }
                     
@@ -181,9 +186,9 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
         
         else if doingTableView.hidden == false {
             if (scrollView.contentOffset.x == 0) && (scrollView.contentOffset.y == 0) {
-                let content:ContentsData = doingList.objectAtIndex(scrollView.tag) as! ContentsData
+                let task:TaskData = doingList.objectAtIndex(scrollView.tag) as! TaskData
                 
-                ServerUtil.contentToLeft(String(content.id), teamId: GeneralUtil.getTeamId() as String, userContent: content.userContent, reponseHandler: { (handler) -> Void in
+                ServerUtil.taskToLeft(String(task.id), projectId: GeneralUtil.getTeamId() as String, userTask: task.userTask, reponseHandler: { (handler) -> Void in
                     NSLog("go to done")
                     NSLog("handler = %@", handler)
                     
@@ -196,22 +201,22 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
                     self.doingList.removeAllObjects()
                     self.doneList.removeAllObjects()
                     
-                    let contents:NSArray = handler["content"] as! NSArray
+                    let tasks:NSArray = handler["content"] as! NSArray
                     
-                    for var i = 0; i < contents.count; i++ {
-                        let content:NSDictionary = contents[i] as! NSDictionary
+                    for var i = 0; i < tasks.count; i++ {
+                        let task:NSDictionary = tasks[i] as! NSDictionary
                         
-                        let contentData:ContentsData = ContentsData(ContentsData: content)
-                        let status:NSString = contentData.status
+                        let taskData:TaskData = TaskData(TaskData: task)
+                        let status:NSString = taskData.status
                         
                         if status.isEqualToString("to_do") {
-                            self.toDoList.addObject(contentData)
+                            self.toDoList.addObject(taskData)
                         }
                         else if status.isEqualToString("doing") {
-                            self.doingList.addObject(contentData)
+                            self.doingList.addObject(taskData)
                         }
                         else if status.isEqualToString("done") {
-                            self.doneList.addObject(contentData)
+                            self.doneList.addObject(taskData)
                         }
                     }
                     
@@ -222,10 +227,10 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             }
             
             else if (scrollView.contentOffset.x == 750) && (scrollView.contentOffset.y == 0) {
-                let content:ContentsData = doingList.objectAtIndex(scrollView.tag) as! ContentsData
-                NSLog("content = %@", content)
+                let task:TaskData = doingList.objectAtIndex(scrollView.tag) as! TaskData
+                NSLog("content = %@", task)
                 
-                ServerUtil.contentToRight(String(content.id), teamId: GeneralUtil.getTeamId() as String, userContent: content.userContent, reponseHandler: { (handler) -> Void in
+                ServerUtil.taskToRight(String(task.id), projectId: GeneralUtil.getTeamId() as String, userTask: task.userTask, reponseHandler: { (handler) -> Void in
                     NSLog("go to to_do")
                     NSLog("handler = %@", handler)
                     
@@ -237,22 +242,22 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
                     self.doingList.removeAllObjects()
                     self.doneList.removeAllObjects()
                     
-                    let contents:NSArray = handler["content"] as! NSArray
+                    let tasks:NSArray = handler["content"] as! NSArray
                     
-                    for var i = 0; i < contents.count; i++ {
-                        let content:NSDictionary = contents[i] as! NSDictionary
+                    for var i = 0; i < tasks.count; i++ {
+                        let task:NSDictionary = tasks[i] as! NSDictionary
                         
-                        let contentData:ContentsData = ContentsData(ContentsData: content)
-                        let status:NSString = contentData.status
+                        let taskData:TaskData = TaskData(TaskData: task)
+                        let status:NSString = taskData.status
                         
                         if status.isEqualToString("to_do") {
-                            self.toDoList.addObject(contentData)
+                            self.toDoList.addObject(taskData)
                         }
                         else if status.isEqualToString("doing") {
-                            self.doingList.addObject(contentData)
+                            self.doingList.addObject(taskData)
                         }
                         else if status.isEqualToString("done") {
-                            self.doneList.addObject(contentData)
+                            self.doneList.addObject(taskData)
                         }
                     }
                     
@@ -265,9 +270,9 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
         
         else if doneTableView.hidden == false {
             if scrollView.contentOffset.x == 375 {
-                let content:ContentsData = doneList.objectAtIndex(scrollView.tag) as! ContentsData
+                let task:TaskData = doneList.objectAtIndex(scrollView.tag) as! TaskData
 
-                ServerUtil.contentToRight(String(content.id), teamId: GeneralUtil.getTeamId() as String, userContent: content.userContent, reponseHandler: { (handler) -> Void in
+                ServerUtil.taskToRight(String(task.id), projectId: GeneralUtil.getTeamId() as String, userTask: task.userTask, reponseHandler: { (handler) -> Void in
                     NSLog("go to doing")
                     NSLog("handler = %@", handler)
                     
@@ -279,22 +284,22 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
                     self.doingList.removeAllObjects()
                     self.doneList.removeAllObjects()
                     
-                    let contents:NSArray = handler["content"] as! NSArray
+                    let tasks:NSArray = handler["content"] as! NSArray
                     
-                    for var i = 0; i < contents.count; i++ {
-                        let content:NSDictionary = contents[i] as! NSDictionary
+                    for var i = 0; i < tasks.count; i++ {
+                        let task:NSDictionary = tasks[i] as! NSDictionary
                         
-                        let contentData:ContentsData = ContentsData(ContentsData: content)
-                        let status:NSString = contentData.status
+                        let taskData:TaskData = TaskData(TaskData: task)
+                        let status:NSString = taskData.status
                         
                         if status.isEqualToString("to_do") {
-                            self.toDoList.addObject(contentData)
+                            self.toDoList.addObject(taskData)
                         }
                         else if status.isEqualToString("doing") {
-                            self.doingList.addObject(contentData)
+                            self.doingList.addObject(taskData)
                         }
                         else if status.isEqualToString("done") {
-                            self.doneList.addObject(contentData)
+                            self.doneList.addObject(taskData)
                         }
                     }
                     
@@ -308,28 +313,28 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
     }
     
     func contentReLoad() {
-        ServerUtil.loadContents(GeneralUtil.getTeamId() as String) { (handler) -> Void in
+        ServerUtil.loadTasks(GeneralUtil.getTeamId() as String) { (handler) -> Void in
             NSLog("handler = %@", handler)
             self.toDoList.removeAllObjects()
             self.doingList.removeAllObjects()
             self.doneList.removeAllObjects()
             
-            let contents:NSArray = handler["content"] as! NSArray
+            let tasks:NSArray = handler["content"] as! NSArray
             
-            for var i = 0; i < contents.count; i++ {
-                let content:NSDictionary = contents[i] as! NSDictionary
+            for var i = 0; i < tasks.count; i++ {
+                let task:NSDictionary = tasks[i] as! NSDictionary
                 
-                let contentData:ContentsData = ContentsData(ContentsData: content)
-                let status:NSString = contentData.status
+                let taskData:TaskData = TaskData(TaskData: task)
+                let status:NSString = taskData.status
                 
                 if status.isEqualToString("to_do") {
-                    self.toDoList.addObject(contentData)
+                    self.toDoList.addObject(taskData)
                 }
                 else if status.isEqualToString("doing") {
-                    self.doingList.addObject(contentData)
+                    self.doingList.addObject(taskData)
                 }
                 else if status.isEqualToString("done") {
-                    self.doneList.addObject(contentData)
+                    self.doneList.addObject(taskData)
                 }
             }
             
@@ -364,34 +369,89 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
         
         if tableView.isEqual(toDoTableView) {
             let toDoCell = toDoTableView.dequeueReusableCellWithIdentifier("ToDoCell") as! ToDoTableViewCell!
-            let toDoDic:ContentsData = (toDoList.objectAtIndex(indexPath.row) as? ContentsData)!
-            toDoCell.toDoLabel.text = toDoDic.userContent
-            NSLog("toDoCell.toDoLabel = %@", toDoCell.toDoLabel.text!)
+            let toDoDic:TaskData = (toDoList.objectAtIndex(indexPath.row) as? TaskData)!
+            toDoCell.toDoLabel.text = toDoDic.userTask
             toDoCell.toDoScrollView.tag = indexPath.row
             toDoCell.toDoScrollView.delegate = self
+            
+            if GeneralUtil.getUserId().isEqualToString(String(toDoDic.userId)) == false {
+                toDoCell.toDoScrollView.userInteractionEnabled = false
+            }
+            
+            let profileFrontURL:String = "https://graph.facebook.com/"
+            let profileBackURL:String = "/picture?type=normal"
+            var profileURL:String = String()
+            profileURL = profileURL.stringByAppendingString(profileFrontURL)
+            profileURL = profileURL.stringByAppendingString(toDoDic.uId)
+            profileURL = profileURL.stringByAppendingString(profileBackURL)
+            toDoCell.profileImage.setImageWithURL(NSURL(string: profileURL))
+            
+            toDoCell.userName.text = toDoDic.userName
+            toDoCell.endLabel.frame.origin.x = 10 * widthRate
+            toDoCell.endLabel.frame.origin.y = 100 * heightRate
+            toDoCell.endLabel.frame.size.width = 355 * widthRate
+            toDoCell.endLabel.frame.size.height = 1
             
             cell = toDoCell
         }
             
         else if tableView.isEqual(doingTableView) {
             let doingCell = doingTableView.dequeueReusableCellWithIdentifier("DoingCell") as! DoingTableViewCell!
-            let doingDic:ContentsData = (doingList.objectAtIndex(indexPath.row) as? ContentsData)!
-            doingCell.doingLabel.text = doingDic.userContent
+            let doingDic:TaskData = (doingList.objectAtIndex(indexPath.row) as? TaskData)!
+            doingCell.doingLabel.text = doingDic.userTask
             doingCell.doingScrollView.tag = indexPath.row
             doingCell.doingScrollView.delegate = self
+            
+            if GeneralUtil.getUserId().isEqualToString(String(doingDic.userId)) == false {
+                doingCell.doingScrollView.userInteractionEnabled = false
+            }
+            
+            let profileFrontURL:String = "https://graph.facebook.com/"
+            let profileBackURL:String = "/picture?type=normal"
+            var profileURL:String = String()
+            profileURL = profileURL.stringByAppendingString(profileFrontURL)
+            profileURL = profileURL.stringByAppendingString(doingDic.uId)
+            profileURL = profileURL.stringByAppendingString(profileBackURL)
+            doingCell.profileImage.setImageWithURL(NSURL(string: profileURL))
+            
+            doingCell.userName.text = doingDic.userName
+            doingCell.endLabel.frame.origin.x = 10 * widthRate
+            doingCell.endLabel.frame.origin.y = 100 * heightRate
+            doingCell.endLabel.frame.size.width = 355 * widthRate
+            doingCell.endLabel.frame.size.height = 1
             
             cell = doingCell
         }
             
         else if tableView.isEqual(doneTableView) {
             let doneCell = doneTableView.dequeueReusableCellWithIdentifier("DoneCell") as! DoneTableViewCell!
-            let doneDic:ContentsData = (doneList.objectAtIndex(indexPath.row) as? ContentsData)!
-            doneCell.doneLabel.text = doneDic.userContent
+            let doneDic:TaskData = (doneList.objectAtIndex(indexPath.row) as? TaskData)!
+            doneCell.doneLabel.text = doneDic.userTask
             doneCell.doneScrollView.tag = indexPath.row
             doneCell.doneScrollView.delegate = self
             
+            if GeneralUtil.getUserId().isEqualToString(String(doneDic.userId)) == false {
+                doneCell.doneScrollView.userInteractionEnabled = false
+            }
+            
+            let profileFrontURL:String = "https://graph.facebook.com/"
+            let profileBackURL:String = "/picture?type=normal"
+            var profileURL:String = String()
+            profileURL = profileURL.stringByAppendingString(profileFrontURL)
+            profileURL = profileURL.stringByAppendingString(doneDic.uId)
+            profileURL = profileURL.stringByAppendingString(profileBackURL)
+            doneCell.profileImage.setImageWithURL(NSURL(string: profileURL))
+            
+            doneCell.userName.text = doneDic.userName
+            doneCell.endLabel.frame.origin.x = 10 * widthRate
+            doneCell.endLabel.frame.origin.y = 100 * heightRate
+            doneCell.endLabel.frame.size.width = 355 * widthRate
+            doneCell.endLabel.frame.size.height = 1
+            
             cell = doneCell
         }
+        
+        tableView.rowHeight = 101 * heightRate
         
         return cell
     }

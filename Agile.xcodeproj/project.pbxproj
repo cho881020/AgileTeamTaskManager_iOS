@@ -16,8 +16,6 @@
 		2B786AB31C28431D00759334 /* AgileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AB21C28431D00759334 /* AgileUITests.swift */; };
 		2B786AC11C284A7D00759334 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */; };
 		DF084A131C3810FC003F479B /* TeamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF084A121C3810FC003F479B /* TeamSearchViewController.swift */; };
-		DF0B026F1C2FD5E200D61FAB /* GeneralUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B026C1C2FD5E200D61FAB /* GeneralUtil.swift */; };
-		DF0B02701C2FD5E200D61FAB /* ServerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B026E1C2FD5E200D61FAB /* ServerUtil.m */; };
 		DF0B02761C2FD84D00D61FAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02751C2FD84D00D61FAB /* LoginViewController.swift */; };
 		DF0B02A21C2FDDBD00D61FAB /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B028A1C2FDDBD00D61FAB /* NSObject+SBJson.m */; };
 		DF0B02A31C2FDDBD00D61FAB /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0B028D1C2FDDBD00D61FAB /* SBJsonParser.m */; };
@@ -44,9 +42,12 @@
 		DF0B02CD1C2FDEFF00D61FAB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0B02CB1C2FDEFF00D61FAB /* FBSDKLoginKit.framework */; };
 		DF0B02CF1C303B5500D61FAB /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0B02CE1C303B5500D61FAB /* FBSDKShareKit.framework */; };
 		DF0B02D11C3051E900D61FAB /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */; };
-		DF0B02D41C305A3400D61FAB /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D31C305A3400D61FAB /* TeamData.swift */; };
-		DF0B02D61C305F3C00D61FAB /* facebook_login_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DF0B02D51C305F3C00D61FAB /* facebook_login_image.png */; };
-		DF0B02D81C30600900D61FAB /* ContentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D71C30600900D61FAB /* ContentsData.swift */; };
+		DF0B02D41C305A3400D61FAB /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D31C305A3400D61FAB /* ProjectData.swift */; };
+		DF0B02D81C30600900D61FAB /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D71C30600900D61FAB /* TaskData.swift */; };
+		DF7E2FCE1C392CE80096513B /* facebook_login_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DF7E2FCD1C392CE80096513B /* facebook_login_image.png */; };
+		DF7E2FD31C392DC90096513B /* GeneralUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7E2FD01C392DC90096513B /* GeneralUtil.swift */; };
+		DF7E2FD41C392DC90096513B /* ServerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7E2FD21C392DC90096513B /* ServerUtil.m */; };
+		DF7E2FD71C3933D70096513B /* tabbar_icon_p_01.png in Resources */ = {isa = PBXBuildFile; fileRef = DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */; };
 		DFF4232C1C2C16CB0013AC29 /* DoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */; };
 		DFF4232E1C2C16D90013AC29 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -85,9 +86,6 @@
 		2B786AC01C284A7D00759334 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		DF084A121C3810FC003F479B /* TeamSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSearchViewController.swift; sourceTree = "<group>"; };
 		DF0B026B1C2FD5E200D61FAB /* Agile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Agile-Bridging-Header.h"; sourceTree = "<group>"; };
-		DF0B026C1C2FD5E200D61FAB /* GeneralUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralUtil.swift; path = ../../../Desktop/GongBack/GongBack/GeneralUtil.swift; sourceTree = "<group>"; };
-		DF0B026D1C2FD5E200D61FAB /* ServerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerUtil.h; path = ../../../Desktop/GongBack/GongBack/ServerUtil.h; sourceTree = "<group>"; };
-		DF0B026E1C2FD5E200D61FAB /* ServerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerUtil.m; path = ../../../Desktop/GongBack/GongBack/ServerUtil.m; sourceTree = "<group>"; };
 		DF0B02751C2FD84D00D61FAB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF0B02891C2FDDBD00D61FAB /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "SBJson/NSObject+SBJson.h"; sourceTree = "<group>"; };
 		DF0B028A1C2FDDBD00D61FAB /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "SBJson/NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -137,9 +135,13 @@
 		DF0B02CB1C2FDEFF00D61FAB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		DF0B02CE1C303B5500D61FAB /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
-		DF0B02D31C305A3400D61FAB /* TeamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
-		DF0B02D51C305F3C00D61FAB /* facebook_login_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook_login_image.png; path = ../../../Desktop/GongBack/GongBack/facebook_login_image.png; sourceTree = "<group>"; };
-		DF0B02D71C30600900D61FAB /* ContentsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsData.swift; sourceTree = "<group>"; };
+		DF0B02D31C305A3400D61FAB /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
+		DF0B02D71C30600900D61FAB /* TaskData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
+		DF7E2FCD1C392CE80096513B /* facebook_login_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_login_image.png; sourceTree = "<group>"; };
+		DF7E2FD01C392DC90096513B /* GeneralUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralUtil.swift; sourceTree = "<group>"; };
+		DF7E2FD11C392DC90096513B /* ServerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerUtil.h; sourceTree = "<group>"; };
+		DF7E2FD21C392DC90096513B /* ServerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerUtil.m; sourceTree = "<group>"; };
+		DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_icon_p_01.png; sourceTree = "<group>"; };
 		DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoingTableViewCell.swift; sourceTree = "<group>"; };
 		DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,13 +197,11 @@
 		2B786A911C28431D00759334 /* Agile */ = {
 			isa = PBXGroup;
 			children = (
-				DF0B02D51C305F3C00D61FAB /* facebook_login_image.png */,
+				DF7E2FD51C3933930096513B /* image */,
+				DF7E2FCF1C392D800096513B /* Utillity */,
 				DF0B02D21C305A1400D61FAB /* DataClass */,
 				DF0B02811C2FDC0900D61FAB /* Frameworks */,
 				DF0B027F1C2FDBEF00D61FAB /* Libraries */,
-				DF0B026C1C2FD5E200D61FAB /* GeneralUtil.swift */,
-				DF0B026D1C2FD5E200D61FAB /* ServerUtil.h */,
-				DF0B026E1C2FD5E200D61FAB /* ServerUtil.m */,
 				DFF4232A1C2C16990013AC29 /* TableViewCells */,
 				DFF423291C2C168F0013AC29 /* ViewControllers */,
 				2B786A921C28431D00759334 /* AppDelegate.swift */,
@@ -312,10 +312,29 @@
 		DF0B02D21C305A1400D61FAB /* DataClass */ = {
 			isa = PBXGroup;
 			children = (
-				DF0B02D31C305A3400D61FAB /* TeamData.swift */,
-				DF0B02D71C30600900D61FAB /* ContentsData.swift */,
+				DF0B02D31C305A3400D61FAB /* ProjectData.swift */,
+				DF0B02D71C30600900D61FAB /* TaskData.swift */,
 			);
 			name = DataClass;
+			sourceTree = "<group>";
+		};
+		DF7E2FCF1C392D800096513B /* Utillity */ = {
+			isa = PBXGroup;
+			children = (
+				DF7E2FD01C392DC90096513B /* GeneralUtil.swift */,
+				DF7E2FD11C392DC90096513B /* ServerUtil.h */,
+				DF7E2FD21C392DC90096513B /* ServerUtil.m */,
+			);
+			name = Utillity;
+			sourceTree = "<group>";
+		};
+		DF7E2FD51C3933930096513B /* image */ = {
+			isa = PBXGroup;
+			children = (
+				DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */,
+				DF7E2FCD1C392CE80096513B /* facebook_login_image.png */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 		DFF423291C2C168F0013AC29 /* ViewControllers */ = {
@@ -446,7 +465,8 @@
 				2B786A9D1C28431D00759334 /* LaunchScreen.storyboard in Resources */,
 				2B786A9A1C28431D00759334 /* Assets.xcassets in Resources */,
 				2B786A981C28431D00759334 /* Main.storyboard in Resources */,
-				DF0B02D61C305F3C00D61FAB /* facebook_login_image.png in Resources */,
+				DF7E2FCE1C392CE80096513B /* facebook_login_image.png in Resources */,
+				DF7E2FD71C3933D70096513B /* tabbar_icon_p_01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,10 +499,9 @@
 				DF0B02A91C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.m in Sources */,
 				DF0B02C91C2FDDD900D61FAB /* UIImageView+AFNetworking.m in Sources */,
 				DF0B02C11C2FDDD900D61FAB /* AFHTTPClient.m in Sources */,
+				DF7E2FD31C392DC90096513B /* GeneralUtil.swift in Sources */,
 				DF0B02A51C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.m in Sources */,
-				DF0B026F1C2FD5E200D61FAB /* GeneralUtil.swift in Sources */,
 				DF0B02A31C2FDDBD00D61FAB /* SBJsonParser.m in Sources */,
-				DF0B02701C2FD5E200D61FAB /* ServerUtil.m in Sources */,
 				DF0B02C21C2FDDD900D61FAB /* AFHTTPRequestOperation.m in Sources */,
 				DF0B02761C2FD84D00D61FAB /* LoginViewController.swift in Sources */,
 				DF0B02C61C2FDDD900D61FAB /* AFPropertyListRequestOperation.m in Sources */,
@@ -491,9 +510,10 @@
 				DF0B02C41C2FDDD900D61FAB /* AFJSONRequestOperation.m in Sources */,
 				DFF4232E1C2C16D90013AC29 /* DoneTableViewCell.swift in Sources */,
 				DF0B02AC1C2FDDBD00D61FAB /* SBJsonUTF8Stream.m in Sources */,
+				DF7E2FD41C392DC90096513B /* ServerUtil.m in Sources */,
 				DF0B02AB1C2FDDBD00D61FAB /* SBJsonTokeniser.m in Sources */,
 				DF084A131C3810FC003F479B /* TeamSearchViewController.swift in Sources */,
-				DF0B02D81C30600900D61FAB /* ContentsData.swift in Sources */,
+				DF0B02D81C30600900D61FAB /* TaskData.swift in Sources */,
 				DF0B02C81C2FDDD900D61FAB /* AFXMLRequestOperation.m in Sources */,
 				DF0B02A71C2FDDBD00D61FAB /* SBJsonStreamParserState.m in Sources */,
 				DF0B02D11C3051E900D61FAB /* TeamListViewController.swift in Sources */,
@@ -501,7 +521,7 @@
 				DF0B02A21C2FDDBD00D61FAB /* NSObject+SBJson.m in Sources */,
 				DFF4232C1C2C16CB0013AC29 /* DoingTableViewCell.swift in Sources */,
 				DF0B02A81C2FDDBD00D61FAB /* SBJsonStreamWriter.m in Sources */,
-				DF0B02D41C305A3400D61FAB /* TeamData.swift in Sources */,
+				DF0B02D41C305A3400D61FAB /* ProjectData.swift in Sources */,
 				DF0B02A41C2FDDBD00D61FAB /* SBJsonStreamParser.m in Sources */,
 				DF0B02C51C2FDDD900D61FAB /* AFNetworkActivityIndicatorManager.m in Sources */,
 			);

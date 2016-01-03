@@ -15,7 +15,7 @@ class TeamSearchViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBAction func searchTeam(sender: UIButton) { //팀 검색
         NSLog("teamName = %@", searchTextField.text!)
-        ServerUtil.searchTeam(searchTextField.text!) { (handler) -> Void in
+        ServerUtil.searchProject(searchTextField.text!) { (handler) -> Void in
             NSLog("handler = %@", handler)
         }
     }

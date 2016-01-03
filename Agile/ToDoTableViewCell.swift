@@ -13,6 +13,9 @@ class ToDoTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet weak var toDoScrollView: UIScrollView!
     @IBOutlet weak var toDoContentView: UIView!
     @IBOutlet weak var toDoLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var endLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,11 +28,15 @@ class ToDoTableViewCell: UITableViewCell, UIScrollViewDelegate {
         tempFrame.origin.x = toDoScrollView.frame.size.width
         toDoScrollView.scrollRectToVisible(tempFrame, animated: false)
         
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
+        profileImage.layer.masksToBounds = false
+        profileImage.clipsToBounds = true
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         
     }
 

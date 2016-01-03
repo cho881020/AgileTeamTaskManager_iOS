@@ -12,10 +12,34 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var teamTableView: UITableView!
     
-    var teamList:NSMutableArray = NSMutableArray()
+    var projectList:NSMutableArray = NSMutableArray()
     var belongList:NSMutableArray = NSMutableArray()
     var widthRate:CGFloat!
     var heightRate:CGFloat!
+    
+    @IBAction func teamAddBtn(sender: UIButton) {
+        let alertView = UIAlertView()
+        alertView.title = "방 만들기"
+        alertView.addButtonWithTitle("Done")
+        alertView.alertViewStyle = UIAlertViewStyle.LoginAndPasswordInput
+        alertView.textFieldAtIndex(0)?.placeholder = "생성할 팀의 이름을 입력해주세요."
+        alertView.textFieldAtIndex(1)?.placeholder = "비밀번호를 입력해주세요."
+        alertView.addButtonWithTitle("Cancel")
+        alertView.show()
+        alertView.delegate = self
+        
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 0 {
+            let projectTitle:String = (alertView.textFieldAtIndex(0)?.text)!
+            let password:String = (alertView.textFieldAtIndex(1)?.text)!
+            ServerUtil.creatProject(projectTitle, password: password, userId: GeneralUtil.getUserId() as String, reponseHandler: { (handler) -> Void in
+                NSLog("handler = %@", handler)
+            })
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,32 +49,31 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         widthRate = UIScreen.mainScreen().bounds.width / 375
         heightRate = UIScreen.mainScreen().bounds.height / 667
         
-        teamList.removeAllObjects()
+        projectList.removeAllObjects()
         belongList.removeAllObjects()
         
         teamTableView.delegate = self
         teamTableView.dataSource = self
         
-        ServerUtil.loadTeamList(GeneralUtil.getUserId() as String) { (handler) -> Void in
+        ServerUtil.loadProjectList(GeneralUtil.getUserId() as String) { (handler) -> Void in
             NSLog("handler = %@", handler)
             
-            let madeTeam:NSArray = handler["jangteam"] as! NSArray
-            let belongTeam:NSArray = handler["sokteam"] as! NSArray
+            let madeProject:NSArray = handler["jangteam"] as! NSArray
+            let belongProject:NSArray = handler["sokteam"] as! NSArray
             
-            for var i = 0; i < madeTeam.count; i++ {
-                let team:NSDictionary = madeTeam[i] as! NSDictionary
-                let teamData:TeamData = TeamData(TeamData: team)
+            for var i = 0; i < madeProject.count; i++ {
+                let project:NSDictionary = madeProject[i] as! NSDictionary
+                let projectData:ProjectData = ProjectData(ProjectData: project)
                 
-                self.teamList.addObject(teamData)
+                self.projectList.addObject(projectData)
                 
             }
             
-            for var i = 0; i < belongTeam.count; i++ {
-//                NSLog("ggg")
-//                let team:NSDictionary = belongTeam[i] as! NSDictionary
-//                let teamData:TeamData = TeamData(TeamData: team)
+            for var i = 0; i < belongProject.count; i++ {
+                let project:NSDictionary = belongProject[i] as! NSDictionary
+                let projectData:ProjectData = ProjectData(ProjectData: project)
             
-                self.belongList.addObject(1)
+                self.belongList.addObject(projectData)
             }
             
             self.teamTableView.reloadData()
@@ -66,7 +89,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rowCount:Int!
         if section == 0 {
-            rowCount = teamList.count
+            rowCount = projectList.count
         }
         else if section == 1 {
             rowCount = belongList.count
@@ -77,22 +100,30 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("teamListCell")! as UITableViewCell
         
-        let teamData:TeamData!
+        let projectData:ProjectData!
         
-        let teamLabel:UILabel = cell.viewWithTag(1) as! UILabel
+        let projectLabel:UILabel = cell.viewWithTag(1) as! UILabel
         if indexPath.section == 0 {
-            teamData = teamList.objectAtIndex(indexPath.row) as! TeamData
-            teamLabel.text = teamData.teamTitle as String
+            projectData = projectList.objectAtIndex(indexPath.row) as! ProjectData
+            projectLabel.text = projectData.projectTitle as String
         }
         else if indexPath.section == 1 {
-//            teamData = belongList.objectAtIndex(indexPath.row) as! TeamData
-//            teamLabel.text = teamData.teamTitle as String
-            teamLabel.text = "으아앙"
+            projectData = belongList.objectAtIndex(indexPath.row) as! ProjectData
+            projectLabel.text = projectData.projectTitle as String
         }
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let projectData:ProjectData!
+        if indexPath.section == 0 {
+            projectData = projectList.objectAtIndex(indexPath.row) as! ProjectData
+            GeneralUtil.setTeamId(String(projectData.id as Int))
+        }
+        else if indexPath.section == 1 {
+            projectData = belongList.objectAtIndex(indexPath.row) as! ProjectData
+            GeneralUtil.setTeamId(String(projectData.id as Int))
+        }
         performSegueWithIdentifier("contentsSegue", sender: nil)
     }
     
