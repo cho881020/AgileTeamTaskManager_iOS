@@ -21,6 +21,8 @@
 + (void)loadProjectList:(NSString *)userId reponseHandler:(void (^)(NSDictionary *))handler;
 + (void)searchProject:(NSString *)projectName reponseHandler:(void (^)(NSDictionary *))handler;
 + (void)creatProject:(NSString *)projectTitle password:(NSString *)password userId:(NSString *)userId reponseHandler:(void (^)(NSDictionary *))handler;
++ (void)getAllProject:(NSString *)userId reponseHandler:(void (^)(NSDictionary *))handler;
++ (void)enterProject:(NSString *)teamId password:(NSString *)password reponseHandler:(void (^)(NSDictionary *))handler;
 //+ (void)checkLogin:(NSString *)userId password:(NSString *)password  reponseHandler:(void (^)(NSDictionary *))handler ;
 //+ (void)registerUserIdPw:(NSString *)userId password:(NSString *)password  name:(NSString *)name reponseHandler:(void (^)(NSDictionary *))handler;
 //+ (void)registerFacebookUser:(NSString *)userId password:(NSString *)password  name:(NSString *)name reponseHandler:(void (^)(NSDictionary *))handler;
