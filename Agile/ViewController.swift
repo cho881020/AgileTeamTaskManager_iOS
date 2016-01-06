@@ -51,52 +51,61 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
         NSLog("done")
     }
     
-    @IBAction func newContent(sender: UIButton) {
-        let alertView = UIAlertView()
-        alertView.title = "추가할 To Do를 입력해주세요."
-        alertView.addButtonWithTitle("Done")
-        alertView.alertViewStyle = UIAlertViewStyle.PlainTextInput
-        alertView.addButtonWithTitle("Cancel")
-        alertView.show()
-        alertView.delegate = self
-    }
-    
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 0 {
-            let task:String = (alertView.textFieldAtIndex(0)?.text)!
-
-            ServerUtil.newTask(GeneralUtil.getUserId() as String, userTask: task, projectId: GeneralUtil.getTeamId() as String) { (handler) -> Void in
-                NSLog("handler = %@", handler)
-                
-                self.toDoList.removeAllObjects()
-                self.doingList.removeAllObjects()
-                self.doneList.removeAllObjects()
-                
-                let tasks:NSArray = handler["content"] as! NSArray
-                
-                for var i = 0; i < tasks.count; i++ {
-                    let task:NSDictionary = tasks[i] as! NSDictionary
-                    
-                    let taskData:TaskData = TaskData(TaskData: task)
-                    let status:NSString = taskData.status
-                    
-                    if status.isEqualToString("to_do") {
-                        self.toDoList.addObject(taskData)
-                    }
-                    else if status.isEqualToString("doing") {
-                        self.doingList.addObject(taskData)
-                    }
-                    else if status.isEqualToString("done") {
-                        self.doneList.addObject(taskData)
-                    }
-                }
-                
-                self.toDoTableView.reloadData()
-                self.doingTableView.reloadData()
-                self.doneTableView.reloadData()
-            }
-        }
-    }
+//    @IBAction func newContent(sender: UIButton) {
+//        let alertView = UIAlertView()
+//        alertView.title = "추가할 To Do를 입력해주세요."
+//        alertView.addButtonWithTitle("Done")
+//        alertView.alertViewStyle = UIAlertViewStyle.PlainTextInput
+//        alertView.addButtonWithTitle("Cancel")
+//        alertView.show()
+//        alertView.delegate = self
+//        
+//        var alertAction = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+//        
+////        alertAction.view.addSubview(cardCompanyPickerView)
+//        let confirmBtn = UIAlertAction(title: "확인", style: UIAlertActionStyle.Cancel, handler: {(alert: UIAlertAction!) in NSLog("ok")})
+//        
+//        alertAction.addAction(confirmBtn)
+//        
+//        self.presentViewController(alertAction, animated: true, completion: {})
+//    }
+//    
+//    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+//        if buttonIndex == 0 {
+//            let task:String = (alertView.textFieldAtIndex(0)?.text)!
+//
+//            ServerUtil.newTask(GeneralUtil.getUserId() as String, userTask: task, projectId: GeneralUtil.getTeamId() as String) { (handler) -> Void in
+//                NSLog("handler = %@", handler)
+//                
+//                self.toDoList.removeAllObjects()
+//                self.doingList.removeAllObjects()
+//                self.doneList.removeAllObjects()
+//                
+//                let tasks:NSArray = handler["content"] as! NSArray
+//                
+//                for var i = 0; i < tasks.count; i++ {
+//                    let task:NSDictionary = tasks[i] as! NSDictionary
+//                    
+//                    let taskData:TaskData = TaskData(TaskData: task)
+//                    let status:NSString = taskData.status
+//                    
+//                    if status.isEqualToString("to_do") {
+//                        self.toDoList.addObject(taskData)
+//                    }
+//                    else if status.isEqualToString("doing") {
+//                        self.doingList.addObject(taskData)
+//                    }
+//                    else if status.isEqualToString("done") {
+//                        self.doneList.addObject(taskData)
+//                    }
+//                }
+//                
+//                self.toDoTableView.reloadData()
+//                self.doingTableView.reloadData()
+//                self.doneTableView.reloadData()
+//            }
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -345,6 +354,10 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
 
     }
     
+    func deleteTask(sender: UIButton) {
+        NSLog("tag = %d", sender.tag)
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rowCount:Int!
         
@@ -426,6 +439,10 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
         else if tableView.isEqual(doneTableView) {
             let doneCell = doneTableView.dequeueReusableCellWithIdentifier("DoneCell") as! DoneTableViewCell!
             let doneDic:TaskData = (doneList.objectAtIndex(indexPath.row) as? TaskData)!
+            doneCell.doneLabel.frame.origin.x = 15 * widthRate
+            doneCell.doneLabel.frame.origin.y = 45  * heightRate
+            doneCell.doneLabel.frame.size.width = 345 * widthRate
+            doneCell.doneLabel.frame.size.height = 20 * heightRate
             doneCell.doneLabel.text = doneDic.userTask
             doneCell.doneScrollView.tag = indexPath.row
             doneCell.doneScrollView.delegate = self
@@ -441,12 +458,34 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             profileURL = profileURL.stringByAppendingString(doneDic.uId)
             profileURL = profileURL.stringByAppendingString(profileBackURL)
             doneCell.profileImage.setImageWithURL(NSURL(string: profileURL))
+            doneCell.profileImage.frame.origin.x = 10 * widthRate
+            doneCell.profileImage.frame.origin.y = 5  * heightRate
+            doneCell.profileImage.frame.size.width = 35 * widthRate
+            doneCell.profileImage.frame.size.height = 35 * heightRate
             
+            doneCell.userName.frame.origin.x = 55 * widthRate
+            doneCell.userName.frame.origin.y = 12  * heightRate
+            doneCell.userName.frame.size.width = 150 * widthRate
+            doneCell.userName.frame.size.height = 21 * heightRate
             doneCell.userName.text = doneDic.userName
+            
             doneCell.endLabel.frame.origin.x = 10 * widthRate
             doneCell.endLabel.frame.origin.y = 100 * heightRate
             doneCell.endLabel.frame.size.width = 355 * widthRate
             doneCell.endLabel.frame.size.height = 1
+            
+            doneCell.deleteTaskBtn.frame.origin.x = 326 * widthRate
+            doneCell.deleteTaskBtn.frame.origin.y = 12 * heightRate
+            doneCell.deleteTaskBtn.frame.size.width = 21 * widthRate
+            doneCell.deleteTaskBtn.frame.size.height = 21 * heightRate
+            
+            doneCell.deleteBtn.tag = indexPath.row
+            doneCell.deleteBtn.frame.origin.x = 326 * widthRate
+            doneCell.deleteBtn.frame.origin.y = 12 * heightRate
+            doneCell.deleteBtn.frame.size.width = 21 * widthRate
+            doneCell.deleteBtn.frame.size.height = 21 * heightRate
+            NSLog("tag = %d", doneCell.deleteBtn.tag)
+            doneCell.deleteBtn.addTarget(self, action: "deleteTask:", forControlEvents: UIControlEvents.TouchUpInside)
             
             cell = doneCell
         }

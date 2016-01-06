@@ -91,11 +91,18 @@
     [self baseRequestForPath:@"/mob/getAllTeam" parameters:params reponseHandler:handler];
 }
 
-+ (void)enterProject:(NSString *)teamId password:(NSString *)password reponseHandler:(void (^)(NSDictionary *))handler {
++ (void)enterProject:(NSString *)teamId userId:(NSString *)userId password:(NSString *)password reponseHandler:(void (^)(NSDictionary *))handler {
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:teamId forKey:@"id"];
+    [params setObject:userId forKey:@"user_id"];
     [params setObject:password forKey:@"password"];
     [self baseRequestForPath:@"/mob/enterTeam" parameters:params reponseHandler:handler];
+}
+
++ (void)deleteTask:(NSString *)taskId reponseHandler:(void (^)(NSDictionary *))handler {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:taskId forKey:@"cont_id"];
+    [self baseRequestForPath:@"/mob/getAllTeam" parameters:params reponseHandler:handler];
 }
 
 //

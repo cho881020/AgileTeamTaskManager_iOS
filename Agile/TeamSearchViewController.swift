@@ -37,7 +37,6 @@ class TeamSearchViewController: UIViewController, UITableViewDataSource, UITable
                 let projectData:ProjectData = ProjectData(ProjectData: project)
                 
                 self.allProjectList.addObject(projectData)
-                self.projectList.addObject(projectData)
             }
             
             self.searchTableView.reloadData()
@@ -55,19 +54,11 @@ class TeamSearchViewController: UIViewController, UITableViewDataSource, UITable
                 let projectData:ProjectData = allProjectList.objectAtIndex(i) as! ProjectData
                 if projectData.projectTitle.lowercaseString.rangeOfString(sender.text!.lowercaseString) != nil {
                     self.projectList.addObject(self.allProjectList.objectAtIndex(i))
-                    
+                    NSLog("asdf")
                 }
                 self.searchTableView.reloadData()
             }
         }
-        else {
-            self.projectList.removeAllObjects()
-            for var i:Int = 0; i < allProjectList.count; i++ {
-                self.projectList.addObject(allProjectList.objectAtIndex(i))
-            }
-            self.searchTableView.reloadData()
-        }
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -100,7 +91,7 @@ class TeamSearchViewController: UIViewController, UITableViewDataSource, UITable
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 0 {
             let password:String = (alertView.textFieldAtIndex(0)?.text)!
-            ServerUtil.enterProject(GeneralUtil.getTeamId() as String, password: password, reponseHandler: { (handler) -> Void in
+            ServerUtil.enterProject(GeneralUtil.getTeamId() as String, userId:GeneralUtil.getUserId() as String, password: password, reponseHandler: { (handler) -> Void in
                 NSLog("handler = %@", handler)
                 let result:Int = handler["result"] as! Int
                 if result == 1 {

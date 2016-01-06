@@ -49,14 +49,25 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
         widthRate = UIScreen.mainScreen().bounds.width / 375
         heightRate = UIScreen.mainScreen().bounds.height / 667
         
-        projectList.removeAllObjects()
-        belongList.removeAllObjects()
         
         teamTableView.delegate = self
         teamTableView.dataSource = self
         
+        projectLoad()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        NSLog("projectLoad")
+        projectLoad()
+    }
+    
+    func projectLoad() {
         ServerUtil.loadProjectList(GeneralUtil.getUserId() as String) { (handler) -> Void in
             NSLog("handler = %@", handler)
+            
+            self.projectList.removeAllObjects()
+            self.belongList.removeAllObjects()
             
             let madeProject:NSArray = handler["jangteam"] as! NSArray
             let belongProject:NSArray = handler["sokteam"] as! NSArray
@@ -72,13 +83,12 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
             for var i = 0; i < belongProject.count; i++ {
                 let project:NSDictionary = belongProject[i] as! NSDictionary
                 let projectData:ProjectData = ProjectData(ProjectData: project)
-            
+                
                 self.belongList.addObject(projectData)
             }
             
             self.teamTableView.reloadData()
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,12 +97,16 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rowCount:Int!
+        var rowCount:Int = 0
         if section == 0 {
-            rowCount = projectList.count
+            if projectList.count != 0 {
+                rowCount = projectList.count
+            }
         }
         else if section == 1 {
-            rowCount = belongList.count
+            if belongList.count != 0 {
+                rowCount = belongList.count
+            }
         }
         return rowCount
     }

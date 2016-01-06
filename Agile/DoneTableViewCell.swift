@@ -16,6 +16,8 @@ class DoneTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var endLabel: UILabel!
+    @IBOutlet weak var deleteTaskBtn: UIButton!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

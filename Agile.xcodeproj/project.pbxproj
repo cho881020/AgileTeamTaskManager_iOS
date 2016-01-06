@@ -44,6 +44,8 @@
 		DF0B02D11C3051E900D61FAB /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */; };
 		DF0B02D41C305A3400D61FAB /* ProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D31C305A3400D61FAB /* ProjectData.swift */; };
 		DF0B02D81C30600900D61FAB /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B02D71C30600900D61FAB /* TaskData.swift */; };
+		DF0E17991C3D37140085F08F /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0E17981C3D37140085F08F /* AddToDoViewController.swift */; };
+		DF0E179B1C3D40B60085F08F /* iconal01.png in Resources */ = {isa = PBXBuildFile; fileRef = DF0E179A1C3D40B60085F08F /* iconal01.png */; };
 		DF7E2FCE1C392CE80096513B /* facebook_login_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DF7E2FCD1C392CE80096513B /* facebook_login_image.png */; };
 		DF7E2FD31C392DC90096513B /* GeneralUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7E2FD01C392DC90096513B /* GeneralUtil.swift */; };
 		DF7E2FD41C392DC90096513B /* ServerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7E2FD21C392DC90096513B /* ServerUtil.m */; };
@@ -137,6 +139,8 @@
 		DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
 		DF0B02D31C305A3400D61FAB /* ProjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectData.swift; sourceTree = "<group>"; };
 		DF0B02D71C30600900D61FAB /* TaskData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
+		DF0E17981C3D37140085F08F /* AddToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		DF0E179A1C3D40B60085F08F /* iconal01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconal01.png; sourceTree = "<group>"; };
 		DF7E2FCD1C392CE80096513B /* facebook_login_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_login_image.png; sourceTree = "<group>"; };
 		DF7E2FD01C392DC90096513B /* GeneralUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralUtil.swift; sourceTree = "<group>"; };
 		DF7E2FD11C392DC90096513B /* ServerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerUtil.h; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 		DF7E2FD51C3933930096513B /* image */ = {
 			isa = PBXGroup;
 			children = (
+				DF0E179A1C3D40B60085F08F /* iconal01.png */,
 				DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */,
 				DF7E2FCD1C392CE80096513B /* facebook_login_image.png */,
 			);
@@ -344,6 +349,7 @@
 				DF0B02751C2FD84D00D61FAB /* LoginViewController.swift */,
 				DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */,
 				DF084A121C3810FC003F479B /* TeamSearchViewController.swift */,
+				DF0E17981C3D37140085F08F /* AddToDoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 				2B786A9A1C28431D00759334 /* Assets.xcassets in Resources */,
 				2B786A981C28431D00759334 /* Main.storyboard in Resources */,
 				DF7E2FCE1C392CE80096513B /* facebook_login_image.png in Resources */,
+				DF0E179B1C3D40B60085F08F /* iconal01.png in Resources */,
 				DF7E2FD71C3933D70096513B /* tabbar_icon_p_01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +510,7 @@
 				DF0B02A51C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.m in Sources */,
 				DF0B02A31C2FDDBD00D61FAB /* SBJsonParser.m in Sources */,
 				DF0B02C21C2FDDD900D61FAB /* AFHTTPRequestOperation.m in Sources */,
+				DF0E17991C3D37140085F08F /* AddToDoViewController.swift in Sources */,
 				DF0B02761C2FD84D00D61FAB /* LoginViewController.swift in Sources */,
 				DF0B02C61C2FDDD900D61FAB /* AFPropertyListRequestOperation.m in Sources */,
 				DF0B02C31C2FDDD900D61FAB /* AFImageRequestOperation.m in Sources */,
