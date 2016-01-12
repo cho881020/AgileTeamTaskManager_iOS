@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
     @IBOutlet weak var toDoTableView: UITableView!
     @IBOutlet weak var doingTableView: UITableView!
     @IBOutlet weak var doneTableView: UITableView!
+    @IBOutlet weak var revealBtn: UIButton!
     
     var selectedRow:Int!
     var toDoList:NSMutableArray = NSMutableArray()
@@ -51,62 +52,6 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
         NSLog("done")
     }
     
-//    @IBAction func newContent(sender: UIButton) {
-//        let alertView = UIAlertView()
-//        alertView.title = "추가할 To Do를 입력해주세요."
-//        alertView.addButtonWithTitle("Done")
-//        alertView.alertViewStyle = UIAlertViewStyle.PlainTextInput
-//        alertView.addButtonWithTitle("Cancel")
-//        alertView.show()
-//        alertView.delegate = self
-//        
-//        var alertAction = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-//        
-////        alertAction.view.addSubview(cardCompanyPickerView)
-//        let confirmBtn = UIAlertAction(title: "확인", style: UIAlertActionStyle.Cancel, handler: {(alert: UIAlertAction!) in NSLog("ok")})
-//        
-//        alertAction.addAction(confirmBtn)
-//        
-//        self.presentViewController(alertAction, animated: true, completion: {})
-//    }
-//    
-//    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-//        if buttonIndex == 0 {
-//            let task:String = (alertView.textFieldAtIndex(0)?.text)!
-//
-//            ServerUtil.newTask(GeneralUtil.getUserId() as String, userTask: task, projectId: GeneralUtil.getTeamId() as String) { (handler) -> Void in
-//                NSLog("handler = %@", handler)
-//                
-//                self.toDoList.removeAllObjects()
-//                self.doingList.removeAllObjects()
-//                self.doneList.removeAllObjects()
-//                
-//                let tasks:NSArray = handler["content"] as! NSArray
-//                
-//                for var i = 0; i < tasks.count; i++ {
-//                    let task:NSDictionary = tasks[i] as! NSDictionary
-//                    
-//                    let taskData:TaskData = TaskData(TaskData: task)
-//                    let status:NSString = taskData.status
-//                    
-//                    if status.isEqualToString("to_do") {
-//                        self.toDoList.addObject(taskData)
-//                    }
-//                    else if status.isEqualToString("doing") {
-//                        self.doingList.addObject(taskData)
-//                    }
-//                    else if status.isEqualToString("done") {
-//                        self.doneList.addObject(taskData)
-//                    }
-//                }
-//                
-//                self.toDoTableView.reloadData()
-//                self.doingTableView.reloadData()
-//                self.doneTableView.reloadData()
-//            }
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -125,20 +70,27 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
         
         toDoTableView.dataSource = self
         toDoTableView.delegate = self
+        
         doingTableView.dataSource = self
         doingTableView.delegate = self
+        
         doneTableView.dataSource = self
         doneTableView.delegate = self
-        
-        self.doingTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
-        self.doneTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
         
         NSLog("toDoList.count = %d", toDoList.count)
         NSLog("doingList.count = %d", doingList.count)
         NSLog("doneList.count = %d", doneList.count)
         
+        self.revealViewController().rearViewRevealWidth = 260 * widthRate
+        self.revealViewController().tapGestureRecognizer()
+        revealBtn.addTarget(self, action: "revealView", forControlEvents: UIControlEvents.TouchUpInside)
+        
         contentReLoad()
         
+    }
+    
+    func revealView() {
+        self.revealViewController().revealToggle(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -148,10 +100,8 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         NSLog("tag = %d", scrollView.tag)
-        NSLog("scrollView.contentOffset.x = %f", scrollView.contentOffset.x)
-        NSLog("scrollView.contentOffset.y = %f", scrollView.contentOffset.y)
         
-        if toDoTableView.hidden == false {
+        if (toDoTableView.hidden == false) && (doingTableView.hidden == true) && (doneTableView.hidden == true) {
             if (scrollView.contentOffset.x == 0) && (scrollView.contentOffset.y == 0) {
                 let task:TaskData = toDoList.objectAtIndex(scrollView.tag) as! TaskData
                 
@@ -193,7 +143,7 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             }
         }
         
-        else if doingTableView.hidden == false {
+        else if (toDoTableView.hidden == true) && (doingTableView.hidden == false) && (doneTableView.hidden == true) {
             if (scrollView.contentOffset.x == 0) && (scrollView.contentOffset.y == 0) {
                 let task:TaskData = doingList.objectAtIndex(scrollView.tag) as! TaskData
                 
@@ -277,7 +227,7 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             }
         }
         
-        else if doneTableView.hidden == false {
+        else if (toDoTableView.hidden == true) && (doingTableView.hidden == true) && (doneTableView.hidden == false) {
             if scrollView.contentOffset.x == 375 {
                 let task:TaskData = doneList.objectAtIndex(scrollView.tag) as! TaskData
 
@@ -355,7 +305,7 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
     }
     
     func deleteTask(sender: UIButton) {
-        NSLog("tag = %d", sender.tag)
+        NSLog("deletetag = %d", sender.tag)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -390,6 +340,9 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             if GeneralUtil.getUserId().isEqualToString(String(toDoDic.userId)) == false {
                 toDoCell.toDoScrollView.userInteractionEnabled = false
             }
+            else {
+                toDoCell.toDoScrollView.userInteractionEnabled = true
+            }
             
             let profileFrontURL:String = "https://graph.facebook.com/"
             let profileBackURL:String = "/picture?type=normal"
@@ -417,6 +370,9 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             
             if GeneralUtil.getUserId().isEqualToString(String(doingDic.userId)) == false {
                 doingCell.doingScrollView.userInteractionEnabled = false
+            }
+            else {
+                doingCell.doingScrollView.userInteractionEnabled = true
             }
             
             let profileFrontURL:String = "https://graph.facebook.com/"
@@ -447,9 +403,8 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             doneCell.doneScrollView.tag = indexPath.row
             doneCell.doneScrollView.delegate = self
             
-            if GeneralUtil.getUserId().isEqualToString(String(doneDic.userId)) == false {
-                doneCell.doneScrollView.userInteractionEnabled = false
-            }
+            NSLog("userId = %@", String(doneDic.userId))
+            NSLog("myuserId = %@", GeneralUtil.getUserId())
             
             let profileFrontURL:String = "https://graph.facebook.com/"
             let profileBackURL:String = "/picture?type=normal"
@@ -468,12 +423,12 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             doneCell.userName.frame.size.width = 150 * widthRate
             doneCell.userName.frame.size.height = 21 * heightRate
             doneCell.userName.text = doneDic.userName
-            
+
             doneCell.endLabel.frame.origin.x = 10 * widthRate
             doneCell.endLabel.frame.origin.y = 100 * heightRate
             doneCell.endLabel.frame.size.width = 355 * widthRate
             doneCell.endLabel.frame.size.height = 1
-            
+
             doneCell.deleteTaskBtn.frame.origin.x = 326 * widthRate
             doneCell.deleteTaskBtn.frame.origin.y = 12 * heightRate
             doneCell.deleteTaskBtn.frame.size.width = 21 * widthRate
@@ -487,6 +442,13 @@ class ViewController: UIViewController, UIAlertViewDelegate,UITableViewDelegate,
             NSLog("tag = %d", doneCell.deleteBtn.tag)
             doneCell.deleteBtn.addTarget(self, action: "deleteTask:", forControlEvents: UIControlEvents.TouchUpInside)
             
+            if GeneralUtil.getUserId().isEqualToString(String(doneDic.userId)) == false {
+                NSLog("username = %@", doneCell.userName.text!)
+                doneCell.doneScrollView.userInteractionEnabled = false
+            }
+            else {
+                doneCell.doneScrollView.userInteractionEnabled = true
+            }
             cell = doneCell
         }
         

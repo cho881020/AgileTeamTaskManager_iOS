@@ -46,16 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKAppEvents.activateApp()
         
-//        if application.applicationState == UIApplicationState.Inactive {
-            let myStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let destinationVC:ViewController = myStoryboard.instantiateViewControllerWithIdentifier("ContentListView") as! ViewController
-            
-            let navigationVC = myStoryboard.instantiateViewControllerWithIdentifier("naviVC") as! UINavigationController
-            
-            self.window?.rootViewController = navigationVC
-            self.window?.rootViewController?.showViewController(destinationVC, sender: nil)
-//        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

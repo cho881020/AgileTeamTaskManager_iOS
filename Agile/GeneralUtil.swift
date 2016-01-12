@@ -26,6 +26,20 @@ class GeneralUtil: NSObject {
         return userId
     }
     
+    static func setUserName(userName:NSString) {
+        NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    static func getUserName() -> NSString {
+        var userName:NSString = NSUserDefaults.standardUserDefaults().stringForKey("userName")!
+        
+        if userName.isEqualToString("") {
+            userName = "notLogin"
+        }
+        return userName
+    }
+    
     static func setTeamId(teamId:NSString) {
         NSUserDefaults.standardUserDefaults().setObject(teamId, forKey: "teamId")
         NSUserDefaults.standardUserDefaults().synchronize()
@@ -38,6 +52,17 @@ class GeneralUtil: NSObject {
             teamId = "noTeamId"
         }
         return teamId
+    }
+    
+    static func setUserLogedIn(login:Bool) {
+        NSUserDefaults.standardUserDefaults().setBool(login, forKey: "login")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    static func isUserLogedIn() -> Bool {
+        let login:Bool = NSUserDefaults.standardUserDefaults().boolForKey("login")
+        
+        return login
     }
     
 //    static func setUserName(userName:NSString) {

@@ -56,7 +56,7 @@
     [params setObject:taskId forKey:@"cont_id"];
     [params setObject:projectId forKey:@"team_id"];
     [params setObject:userTask forKey:@"user_cont"];
-    [self baseRequestForPath:@"/home/to_left" parameters:params reponseHandler:handler];
+    [self baseRequestForPath:@"/home/to_right" parameters:params reponseHandler:handler];
 }
 
 + (void)loadTasks:(NSString *)projectId reponseHandler:(void (^)(NSDictionary *))handler {

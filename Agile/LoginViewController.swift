@@ -18,7 +18,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        NSLog("isLogin = %@", GeneralUtil.isUserLogedIn())
+        if GeneralUtil.isUserLogedIn() == true {
+            self.performSegueWithIdentifier("loginSegue", sender: UIButton())
+        }
     }
     
     @IBAction func btnFBLoginPressed(sender: AnyObject) {
@@ -97,11 +103,13 @@ class LoginViewController: UIViewController {
                     
                     let iD:Int = userProfile["id"] as! Int
                     GeneralUtil.setUserId(String(iD))
-//                    GeneralUtil.setTeamId(userProfile["team_id"] as! String)
+                    let name:String = userProfile["name"] as! String
+                    GeneralUtil.setUserName(name)
                     
                     NSLog("user id = %@", GeneralUtil.getUserId() as String)
-//                    NSLog("user team_id = %@", GeneralUtil.getTeamId() as String)
+                    NSLog("userName = %@", GeneralUtil.getUserName() as String)
                     
+                    GeneralUtil.setUserLogedIn(true)
                     
                     self.performSegueWithIdentifier("loginSegue", sender: UIButton())
                 })

@@ -11,6 +11,7 @@ import UIKit
 class TeamListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var teamTableView: UITableView!
+    @IBOutlet weak var revealBtn: UIButton!
     
     var projectList:NSMutableArray = NSMutableArray()
     var belongList:NSMutableArray = NSMutableArray()
@@ -44,16 +45,11 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSLog("asdf")
-        
         widthRate = UIScreen.mainScreen().bounds.width / 375
         heightRate = UIScreen.mainScreen().bounds.height / 667
         
-        
         teamTableView.delegate = self
         teamTableView.dataSource = self
-        
-        projectLoad()
         
     }
     
@@ -112,6 +108,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        NSLog("cellForRowAtIndexPath")
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("teamListCell")! as UITableViewCell
         
         let projectData:ProjectData!
@@ -146,6 +143,7 @@ class TeamListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        NSLog("viewForHeaderInSection")
         let header = tableView.dequeueReusableCellWithIdentifier("headerCell") as UITableViewCell!
         
         let headerTitle:UILabel = header.viewWithTag(10) as! UILabel

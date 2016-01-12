@@ -50,6 +50,9 @@
 		DF7E2FD31C392DC90096513B /* GeneralUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7E2FD01C392DC90096513B /* GeneralUtil.swift */; };
 		DF7E2FD41C392DC90096513B /* ServerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7E2FD21C392DC90096513B /* ServerUtil.m */; };
 		DF7E2FD71C3933D70096513B /* tabbar_icon_p_01.png in Resources */ = {isa = PBXBuildFile; fileRef = DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */; };
+		DFEFED061C425B4500D41206 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEFED051C425B4500D41206 /* SWRevealViewController.m */; };
+		DFEFED081C42638300D41206 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DFEFED071C42638300D41206 /* reveal-icon.png */; };
+		DFEFED0A1C42747F00D41206 /* RearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEFED091C42747F00D41206 /* RearViewController.swift */; };
 		DFF4232C1C2C16CB0013AC29 /* DoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */; };
 		DFF4232E1C2C16D90013AC29 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -146,6 +149,10 @@
 		DF7E2FD11C392DC90096513B /* ServerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerUtil.h; sourceTree = "<group>"; };
 		DF7E2FD21C392DC90096513B /* ServerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerUtil.m; sourceTree = "<group>"; };
 		DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_icon_p_01.png; sourceTree = "<group>"; };
+		DFEFED041C425B4500D41206 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		DFEFED051C425B4500D41206 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DFEFED071C42638300D41206 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
+		DFEFED091C42747F00D41206 /* RearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearViewController.swift; sourceTree = "<group>"; };
 		DFF4232B1C2C16CB0013AC29 /* DoingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoingTableViewCell.swift; sourceTree = "<group>"; };
 		DFF4232D1C2C16D90013AC29 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +246,7 @@
 		DF0B027F1C2FDBEF00D61FAB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				DFEFED031C425B0F00D41206 /* SWRevealView */,
 				DF0B02881C2FDD5300D61FAB /* SBJson */,
 				DF0B02861C2FDD2A00D61FAB /* AFNetworking */,
 			);
@@ -335,11 +343,21 @@
 		DF7E2FD51C3933930096513B /* image */ = {
 			isa = PBXGroup;
 			children = (
+				DFEFED071C42638300D41206 /* reveal-icon.png */,
 				DF0E179A1C3D40B60085F08F /* iconal01.png */,
 				DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */,
 				DF7E2FCD1C392CE80096513B /* facebook_login_image.png */,
 			);
 			name = image;
+			sourceTree = "<group>";
+		};
+		DFEFED031C425B0F00D41206 /* SWRevealView */ = {
+			isa = PBXGroup;
+			children = (
+				DFEFED041C425B4500D41206 /* SWRevealViewController.h */,
+				DFEFED051C425B4500D41206 /* SWRevealViewController.m */,
+			);
+			name = SWRevealView;
 			sourceTree = "<group>";
 		};
 		DFF423291C2C168F0013AC29 /* ViewControllers */ = {
@@ -350,6 +368,7 @@
 				DF0B02D01C3051E900D61FAB /* TeamListViewController.swift */,
 				DF084A121C3810FC003F479B /* TeamSearchViewController.swift */,
 				DF0E17981C3D37140085F08F /* AddToDoViewController.swift */,
+				DFEFED091C42747F00D41206 /* RearViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -473,6 +492,7 @@
 				2B786A981C28431D00759334 /* Main.storyboard in Resources */,
 				DF7E2FCE1C392CE80096513B /* facebook_login_image.png in Resources */,
 				DF0E179B1C3D40B60085F08F /* iconal01.png in Resources */,
+				DFEFED081C42638300D41206 /* reveal-icon.png in Resources */,
 				DF7E2FD71C3933D70096513B /* tabbar_icon_p_01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,10 +525,12 @@
 				DF0B02C71C2FDDD900D61FAB /* AFURLConnectionOperation.m in Sources */,
 				DF0B02A91C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.m in Sources */,
 				DF0B02C91C2FDDD900D61FAB /* UIImageView+AFNetworking.m in Sources */,
+				DFEFED061C425B4500D41206 /* SWRevealViewController.m in Sources */,
 				DF0B02C11C2FDDD900D61FAB /* AFHTTPClient.m in Sources */,
 				DF7E2FD31C392DC90096513B /* GeneralUtil.swift in Sources */,
 				DF0B02A51C2FDDBD00D61FAB /* SBJsonStreamParserAccumulator.m in Sources */,
 				DF0B02A31C2FDDBD00D61FAB /* SBJsonParser.m in Sources */,
+				DFEFED0A1C42747F00D41206 /* RearViewController.swift in Sources */,
 				DF0B02C21C2FDDD900D61FAB /* AFHTTPRequestOperation.m in Sources */,
 				DF0E17991C3D37140085F08F /* AddToDoViewController.swift in Sources */,
 				DF0B02761C2FD84D00D61FAB /* LoginViewController.swift in Sources */,
