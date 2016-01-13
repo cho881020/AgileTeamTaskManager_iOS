@@ -13,25 +13,31 @@ class ToDoTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet weak var toDoScrollView: UIScrollView!
     @IBOutlet weak var toDoContentView: UIView!
     @IBOutlet weak var toDoLabel: UILabel!
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var endLabel: UILabel!
+    @IBOutlet weak var deleteBtn: UIButton!
+    
+    var widthRate:CGFloat!
+    var heightRate:CGFloat!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        widthRate = UIScreen.mainScreen().bounds.width / 375
+        heightRate = UIScreen.mainScreen().bounds.height / 667
+        
+        toDoScrollView.frame.size.width = 375 * widthRate
+        toDoScrollView.frame.size.height = 99 * heightRate
+        
+        toDoContentView.frame.size.width = 750 * widthRate
+        toDoContentView.frame.size.height = 99 * heightRate
         
         toDoScrollView.delegate = self
         toDoScrollView.contentSize = CGSizeMake(toDoContentView.frame.size.width, 1)
         toDoScrollView.alwaysBounceVertical=false
         toDoScrollView.alwaysBounceHorizontal=false
-        var tempFrame:CGRect = toDoScrollView.frame
+        var tempFrame:CGRect = CGRectMake(0, 0, toDoScrollView.frame.width, toDoScrollView.frame.height)
         tempFrame.origin.x = toDoScrollView.frame.size.width
         toDoScrollView.scrollRectToVisible(tempFrame, animated: false)
-        
-        
-        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        profileImage.layer.masksToBounds = false
-        profileImage.clipsToBounds = true
         
     }
 

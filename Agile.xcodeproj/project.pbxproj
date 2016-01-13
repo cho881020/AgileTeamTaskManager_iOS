@@ -50,6 +50,7 @@
 		DF7E2FD31C392DC90096513B /* GeneralUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7E2FD01C392DC90096513B /* GeneralUtil.swift */; };
 		DF7E2FD41C392DC90096513B /* ServerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7E2FD21C392DC90096513B /* ServerUtil.m */; };
 		DF7E2FD71C3933D70096513B /* tabbar_icon_p_01.png in Resources */ = {isa = PBXBuildFile; fileRef = DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */; };
+		DFC540931C469D6D00682316 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC540921C469D6C00682316 /* UserData.swift */; };
 		DFEFED061C425B4500D41206 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEFED051C425B4500D41206 /* SWRevealViewController.m */; };
 		DFEFED081C42638300D41206 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DFEFED071C42638300D41206 /* reveal-icon.png */; };
 		DFEFED0A1C42747F00D41206 /* RearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEFED091C42747F00D41206 /* RearViewController.swift */; };
@@ -149,6 +150,7 @@
 		DF7E2FD11C392DC90096513B /* ServerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerUtil.h; sourceTree = "<group>"; };
 		DF7E2FD21C392DC90096513B /* ServerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerUtil.m; sourceTree = "<group>"; };
 		DF7E2FD61C3933D70096513B /* tabbar_icon_p_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_icon_p_01.png; sourceTree = "<group>"; };
+		DFC540921C469D6C00682316 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		DFEFED041C425B4500D41206 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DFEFED051C425B4500D41206 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DFEFED071C42638300D41206 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			children = (
 				DF0B02D31C305A3400D61FAB /* ProjectData.swift */,
 				DF0B02D71C30600900D61FAB /* TaskData.swift */,
+				DFC540921C469D6C00682316 /* UserData.swift */,
 			);
 			name = DataClass;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				DF0B02C71C2FDDD900D61FAB /* AFURLConnectionOperation.m in Sources */,
 				DF0B02A91C2FDDBD00D61FAB /* SBJsonStreamWriterAccumulator.m in Sources */,
 				DF0B02C91C2FDDD900D61FAB /* UIImageView+AFNetworking.m in Sources */,
+				DFC540931C469D6D00682316 /* UserData.swift in Sources */,
 				DFEFED061C425B4500D41206 /* SWRevealViewController.m in Sources */,
 				DF0B02C11C2FDDD900D61FAB /* AFHTTPClient.m in Sources */,
 				DF7E2FD31C392DC90096513B /* GeneralUtil.swift in Sources */,

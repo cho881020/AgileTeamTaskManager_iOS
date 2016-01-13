@@ -102,9 +102,14 @@
 + (void)deleteTask:(NSString *)taskId reponseHandler:(void (^)(NSDictionary *))handler {
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     [params setObject:taskId forKey:@"cont_id"];
-    [self baseRequestForPath:@"/mob/getAllTeam" parameters:params reponseHandler:handler];
+    [self baseRequestForPath:@"/mob/deleteCont" parameters:params reponseHandler:handler];
 }
 
++ (void)teaminfo:(NSString *)teamId reponseHandler:(void (^)(NSDictionary *))handler {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:teamId forKey:@"team_id"];
+    [self baseRequestForPath:@"/mob/teaminfo" parameters:params reponseHandler:handler];
+}
 //
 //+ (void)checkLogin:(NSString *)userId password:(NSString *)password  reponseHandler:(void (^)(NSDictionary *))handler {
 //    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
